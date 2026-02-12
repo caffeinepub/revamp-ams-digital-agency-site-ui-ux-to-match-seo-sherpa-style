@@ -31,34 +31,34 @@ export function ProcessSection() {
   ];
 
   return (
-    <SectionShell id="process" variant="default" className="section-padding">
+    <SectionShell id="process" variant="default" className="section-padding border-b">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="font-bold mb-4">
           Our Proven Four-Step Process
         </h2>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-lg text-muted-foreground leading-relaxed">
           A systematic, results-driven approach to digital marketing excellence. We follow a 
           battle-tested methodology that consistently delivers measurable success for our clients.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {steps.map((step) => (
-          <Card key={step.number} className="relative overflow-hidden border-2 hover:border-primary/20 transition-colors">
-            <div className="absolute top-0 right-0 text-[120px] font-bold text-muted/5 leading-none">
+          <Card key={step.number} className="relative overflow-hidden hover-lift">
+            <div className="absolute top-0 right-0 text-[100px] font-bold text-muted/5 leading-none select-none">
               {step.number}
             </div>
             <CardHeader>
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-4">
-                <step.icon className="w-7 h-7 text-primary" />
+              <div className="w-10 h-10 rounded-md border bg-accent/50 flex items-center justify-center mb-4">
+                <step.icon className="w-5 h-5" />
               </div>
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-sm font-bold text-primary">{step.number}</span>
-                <CardTitle className="text-xl">{step.title}</CardTitle>
+                <span className="text-xs font-bold text-muted-foreground">{step.number}</span>
+                <CardTitle className="text-lg">{step.title}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {step.description}
               </p>
             </CardContent>

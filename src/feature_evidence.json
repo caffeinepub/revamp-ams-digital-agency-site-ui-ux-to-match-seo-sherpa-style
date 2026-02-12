@@ -2,12 +2,21 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-missing-page-section-content-so-every-existing-navigation-footer-link-target-resolves-to-real-readable-content-implement-an-about-section-with-id-about-and-legal-sections-with-ids-privacy-terms-and-cookies-privacy-policy-terms-of-service-cookie-policy-and-ensure-these-sections-are-included-in-the-rendered-layout",
-      "featureTitle": "Add missing page/section content so every existing navigation/footer link target resolves to real, readable content: implement an About section with id=\"#about\" and legal sections with ids \"#privacy\", \"#terms\", and \"#cookies\" (Privacy Policy, Terms of Service, Cookie Policy), and ensure these sections are included in the rendered layout.",
+      "featureId": "feature-update-the-ui-ux-reference-target-from-https-seosherpa-com-to-https-vercel-com-and-restyle-the-existing-ams-digital-agency-single-page-marketing-site-to-closely-match-vercel-s-visual-style-and-interaction-patterns-layout-density-typography-color-system-borders-shadows-hover-focus-states-and-overall-polish-while-keeping-all-existing-section-structure-and-ams-digital-agency-branding-content",
+      "featureTitle": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
       "files": [
-        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/SiteFooter.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
         "frontend/src/components/marketing/sections/AboutSection.tsx",
-        "frontend/src/components/marketing/sections/LegalSections.tsx"
+        "frontend/src/components/marketing/sections/CtaSection.tsx",
+        "frontend/src/components/marketing/sections/HeroSection.tsx",
+        "frontend/src/components/marketing/sections/LegalSections.tsx",
+        "frontend/src/components/marketing/sections/ProcessSection.tsx",
+        "frontend/src/components/marketing/sections/ProofSection.tsx",
+        "frontend/src/components/marketing/sections/SectionShell.tsx",
+        "frontend/src/components/marketing/sections/ServicesSection.tsx",
+        "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
+        "frontend/src/index.css"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,22 +26,19 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-4"
+        "REQ-6"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-rewrite-and-standardize-marketing-copy-across-all-existing-sections-hero-services-proof-metrics-testimonials-process-cta-footer-to-be-consistent-in-tone-and-branding-for-ams-digital-agency-and-ensure-all-user-facing-text-is-clear-professional-english-including-buttons-headings-descriptions-trust-indicators-stats-labels-and-helper-text",
-      "featureTitle": "Rewrite and standardize marketing copy across all existing sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Footer) to be consistent in tone and branding for “AMS Digital Agency”, and ensure all user-facing text is clear, professional English (including buttons, headings, descriptions, trust indicators, stats labels, and helper text).",
+      "featureId": "feature-implement-vercel-like-component-level-styling-updates-across-the-marketing-ui-by-adjusting-the-design-tokens-and-section-component-compositions-e-g-global-theme-variables-container-spacing-utilities-and-section-shells-to-achieve-a-clean-high-contrast-grid-and-divider-forward-aesthetic-that-works-in-both-light-and-dark-modes",
+      "featureTitle": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
       "files": [
-        "frontend/src/components/marketing/SiteFooter.tsx",
         "frontend/src/components/marketing/SiteHeader.tsx",
-        "frontend/src/components/marketing/sections/CtaSection.tsx",
         "frontend/src/components/marketing/sections/HeroSection.tsx",
-        "frontend/src/components/marketing/sections/ProcessSection.tsx",
-        "frontend/src/components/marketing/sections/ProofSection.tsx",
-        "frontend/src/components/marketing/sections/ServicesSection.tsx",
-        "frontend/src/components/marketing/sections/TestimonialsSection.tsx"
+        "frontend/src/components/marketing/sections/SectionShell.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -42,7 +48,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-5"
+        "REQ-7"
       ],
       "confidence": "high"
     }

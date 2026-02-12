@@ -36,31 +36,31 @@ export function SiteFooter() {
   ];
 
   return (
-    <footer className="bg-muted/30 border-t">
+    <footer className="border-t">
       <div className="container-wide">
         {/* Main Footer Content */}
         <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center space-x-2 group mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary">
-                <span className="text-white font-bold text-xl">A</span>
+              <div className="flex items-center justify-center w-7 h-7 rounded bg-foreground">
+                <span className="text-background font-bold text-sm">A</span>
               </div>
-              <span className="font-bold text-xl group-hover:text-primary transition-colors">
+              <span className="font-semibold text-base tracking-tight">
                 AMS Digital Agency
               </span>
             </a>
-            <p className="text-muted-foreground mb-6 max-w-sm">
+            <p className="text-sm text-muted-foreground mb-6 max-w-sm leading-relaxed">
               Transforming businesses through innovative digital marketing strategies. 
               We deliver measurable results that drive growth and maximize your online presence.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-background border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                  className="w-9 h-9 rounded border flex items-center justify-center hover:bg-accent hover:border-foreground/20 transition-all text-muted-foreground hover:text-foreground"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -70,13 +70,13 @@ export function SiteFooter() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold text-sm mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
@@ -87,13 +87,13 @@ export function SiteFooter() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold text-sm mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
@@ -104,13 +104,13 @@ export function SiteFooter() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold text-sm mb-4">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
@@ -121,17 +121,15 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} AMS Digital Agency. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using{' '}
+        <div className="border-t py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <p>© {currentYear} AMS Digital Agency. All rights reserved.</p>
+          <p className="flex items-center gap-1">
+            Built with <Heart className="w-4 h-4 fill-current" /> using{' '}
             <a
               href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appIdentifier}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium hover:text-foreground transition-colors"
+              className="hover:text-foreground transition-colors underline underline-offset-4"
             >
               caffeine.ai
             </a>

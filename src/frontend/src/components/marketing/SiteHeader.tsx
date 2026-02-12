@@ -32,31 +32,31 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-sm border-b'
+          ? 'bg-background/80 backdrop-blur-xl border-b'
           : 'bg-transparent'
       }`}
     >
       <div className="container-wide">
-        <div className="flex h-16 md:h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <button onClick={() => scrollToSection('#')} className="flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary">
-              <span className="text-white font-bold text-xl">A</span>
+            <div className="flex items-center justify-center w-7 h-7 rounded bg-foreground">
+              <span className="text-background font-bold text-sm">A</span>
             </div>
-            <span className="font-bold text-xl group-hover:text-primary transition-colors">
+            <span className="font-semibold text-base tracking-tight">
               AMS Digital
             </span>
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
               >
                 {item.label}
               </button>
@@ -64,15 +64,16 @@ export function SiteHeader() {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <Button
               variant="ghost"
+              size="sm"
               className="hidden sm:inline-flex"
               onClick={() => scrollToSection('#contact')}
             >
-              Contact Us
+              Contact
             </Button>
-            <Button onClick={() => scrollToSection('#contact')}>
+            <Button size="sm" onClick={() => scrollToSection('#contact')}>
               Get Started
             </Button>
 
@@ -85,17 +86,17 @@ export function SiteHeader() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col space-y-4 mt-8">
+                <nav className="flex flex-col space-y-1 mt-8">
                   {navItems.map((item) => (
                     <button
                       key={item.label}
                       onClick={() => scrollToSection(item.href)}
-                      className="text-left text-lg font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
+                      className="text-left px-3 py-2 text-base text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                     >
                       {item.label}
                     </button>
                   ))}
-                  <div className="pt-4 border-t">
+                  <div className="pt-4">
                     <Button
                       className="w-full"
                       onClick={() => scrollToSection('#contact')}

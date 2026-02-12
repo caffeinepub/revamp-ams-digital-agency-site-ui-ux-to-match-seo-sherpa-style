@@ -29,38 +29,38 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <SectionShell id="testimonials" variant="muted" className="section-padding">
+    <SectionShell id="testimonials" variant="muted" className="section-padding border-b">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="font-bold mb-4">
           Trusted by Industry Leaders Worldwide
         </h2>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-lg text-muted-foreground leading-relaxed">
           Don't just take our word for it. Discover what our clients have to say about 
           their experience partnering with AMS Digital Agency and the results we've delivered.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial) => (
           <Card key={testimonial.name} className="hover-lift">
             <CardContent className="pt-6">
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-0.5 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
                 ))}
               </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 "{testimonial.content}"
               </p>
               <div className="flex items-center gap-3">
-                <Avatar className="w-12 h-12">
-                  <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white font-semibold">
+                <Avatar className="w-10 h-10">
+                  <AvatarFallback className="bg-foreground text-background text-xs font-semibold">
                     {testimonial.initials}
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  <div className="font-medium text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
             </CardContent>

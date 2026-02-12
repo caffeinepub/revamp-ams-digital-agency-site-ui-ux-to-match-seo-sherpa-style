@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-12T14:11:15.759Z",
+  "generatedAt": "2026-02-12T14:36:59.200Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,54 +11,65 @@
     "implemented": 2,
     "items": [
       {
-        "id": "REQ-4",
-        "summary": "Add missing page/section content so every existing navigation/footer link target resolves to real, readable content: implement an About section with id=\"#about\" and legal sections with ids \"#privacy\", \"#terms\", and \"#cookies\" (Privacy Policy, Terms of Service, Cookie Policy), and ensure these sections are included in the rendered layout.",
+        "id": "REQ-6",
+        "summary": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
         "status": "implemented",
         "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/index.css",
+          "frontend/src/components/marketing/sections/SectionShell.tsx",
+          "frontend/src/components/marketing/SiteHeader.tsx",
+          "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "frontend/src/components/marketing/sections/ServicesSection.tsx",
+          "frontend/src/components/marketing/sections/ProofSection.tsx",
+          "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
+          "frontend/src/components/marketing/sections/ProcessSection.tsx",
           "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "frontend/src/components/marketing/sections/CtaSection.tsx",
           "frontend/src/components/marketing/sections/LegalSections.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/marketing/SiteFooter.tsx"
         ],
         "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/marketing/sections/SectionShell.tsx",
+          "frontend/src/components/marketing/SiteHeader.tsx",
+          "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "frontend/src/components/marketing/sections/ServicesSection.tsx",
+          "frontend/src/components/marketing/sections/ProofSection.tsx",
+          "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
+          "frontend/src/components/marketing/sections/ProcessSection.tsx",
           "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "frontend/src/components/marketing/sections/CtaSection.tsx",
           "frontend/src/components/marketing/sections/LegalSections.tsx",
-          "frontend/src/App.tsx"
+          "frontend/src/components/marketing/SiteFooter.tsx"
         ]
       },
       {
-        "id": "REQ-5",
-        "summary": "Rewrite and standardize marketing copy across all existing sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Footer) to be consistent in tone and branding for “AMS Digital Agency”, and ensure all user-facing text is clear, professional English (including buttons, headings, descriptions, trust indicators, stats labels, and helper text).",
+        "id": "REQ-7",
+        "summary": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
         "status": "implemented",
         "plannedFiles": [
+          "frontend/tailwind.config.js",
+          "frontend/src/index.css",
+          "frontend/src/components/marketing/sections/SectionShell.tsx",
           "frontend/src/components/marketing/SiteHeader.tsx",
-          "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "frontend/src/components/marketing/sections/ServicesSection.tsx",
-          "frontend/src/components/marketing/sections/ProofSection.tsx",
-          "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-          "frontend/src/components/marketing/sections/ProcessSection.tsx",
-          "frontend/src/components/marketing/sections/CtaSection.tsx",
-          "frontend/src/components/marketing/SiteFooter.tsx"
+          "frontend/src/components/marketing/sections/HeroSection.tsx"
         ],
         "matchedFiles": [
+          "frontend/tailwind.config.js",
+          "frontend/src/index.css",
+          "frontend/src/components/marketing/sections/SectionShell.tsx",
           "frontend/src/components/marketing/SiteHeader.tsx",
-          "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "frontend/src/components/marketing/sections/ServicesSection.tsx",
-          "frontend/src/components/marketing/sections/ProofSection.tsx",
-          "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-          "frontend/src/components/marketing/sections/ProcessSection.tsx",
-          "frontend/src/components/marketing/sections/CtaSection.tsx",
-          "frontend/src/components/marketing/SiteFooter.tsx"
+          "frontend/src/components/marketing/sections/HeroSection.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/App.tsx",
     "frontend/src/components/marketing/SiteFooter.tsx",
     "frontend/src/components/marketing/SiteHeader.tsx",
     "frontend/src/components/marketing/sections/AboutSection.tsx",
@@ -67,8 +78,11 @@
     "frontend/src/components/marketing/sections/LegalSections.tsx",
     "frontend/src/components/marketing/sections/ProcessSection.tsx",
     "frontend/src/components/marketing/sections/ProofSection.tsx",
+    "frontend/src/components/marketing/sections/SectionShell.tsx",
     "frontend/src/components/marketing/sections/ServicesSection.tsx",
     "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
+    "frontend/src/index.css",
+    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

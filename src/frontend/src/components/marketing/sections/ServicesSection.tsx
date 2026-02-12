@@ -51,41 +51,41 @@ export function ServicesSection() {
   };
 
   return (
-    <SectionShell id="services" variant="muted" className="section-padding">
+    <SectionShell id="services" variant="muted" className="section-padding border-b">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="font-bold mb-4">
           Comprehensive Digital Solutions for Modern Businesses
         </h2>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-lg text-muted-foreground leading-relaxed">
           From strategic planning to flawless execution, we deliver end-to-end digital marketing 
           services that transform your online presence and drive measurable business growth.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => (
-          <Card key={service.title} className="hover-lift border-2 hover:border-primary/20">
+          <Card key={service.title} className="hover-lift">
             <CardHeader>
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-md border bg-accent/50 flex items-center justify-center mb-4">
+                <service.icon className="w-5 h-5" />
               </div>
-              <CardTitle className="text-xl">{service.title}</CardTitle>
-              <CardDescription className="text-base leading-relaxed">
+              <CardTitle className="text-lg">{service.title}</CardTitle>
+              <CardDescription className="text-sm leading-relaxed">
                 {service.description}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 mb-4">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  <li key={feature} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <div className="w-1 h-1 rounded-full bg-foreground mt-1.5 flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Button variant="ghost" className="w-full group" onClick={scrollToContact}>
+              <Button variant="ghost" size="sm" className="w-full group" onClick={scrollToContact}>
                 Learn More
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>
           </Card>

@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Ensure every existing site section and in-page link has complete, readable, consistently branded content for AMS Digital Agency.
+**Goal:** Restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel.com’s visual style and interaction patterns while preserving all existing content, branding, and section structure.
 
 **Planned changes:**
-- Add an About section with `id="about"` and meaningful English copy, included in the rendered layout.
-- Add complete legal sections with `id="privacy"`, `id="terms"`, and `id="cookies"` (Privacy Policy, Terms of Service, Cookie Policy) and ensure footer legal links scroll to these sections.
-- Rewrite and standardize all existing marketing copy across current sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Header, Footer) to be coherent, professional English and consistently branded as “AMS Digital Agency”.
-- Ensure there are no dead in-page links (all nav/footer anchors point to existing DOM ids).
+- Update global design tokens and base styles to a Vercel-inspired neutral/monochrome palette with strong semantic contrast for text, borders, and surfaces (including support for light and dark modes).
+- Restyle existing page sections (Header, Hero, Services, Proof, Testimonials, Process, About, CTA, Legal, Footer) to use Vercel-like layout density, typography, grid/divider-forward composition, and refined hover/focus states—without adding new pages or features.
+- Adjust component compositions and section shells (wrappers, spacing, containers) to achieve consistent minimal rounding, thin borders/dividers, and subtle/no elevation, while keeping all existing anchor links and smooth scrolling behavior intact.
 
-**User-visible outcome:** Users can navigate to a fully written About section and complete legal policy sections via header/footer links, and all visible site copy reads as finalized, consistent AMS Digital Agency content with no placeholders.
+**User-visible outcome:** The marketing site looks and feels recognizably Vercel-inspired (clean, high-contrast, polished in light/dark mode), while all existing AMS Digital Agency sections, copy, branding, and navigation anchor links continue to work as before.

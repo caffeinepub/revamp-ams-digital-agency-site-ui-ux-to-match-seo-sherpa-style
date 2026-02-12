@@ -1,66 +1,59 @@
 {
   "kind": "build_request",
-  "title": "Write and add complete content for all site pages/sections",
+  "title": "Update marketing site UI/UX to match Vercel.com visual style",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-4",
-      "text": "Add missing page/section content so every existing navigation/footer link target resolves to real, readable content: implement an About section with id=\"#about\" and legal sections with ids \"#privacy\", \"#terms\", and \"#cookies\" (Privacy Policy, Terms of Service, Cookie Policy), and ensure these sections are included in the rendered layout.",
+      "id": "REQ-6",
+      "text": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-7"
+          "msg-6"
         ],
         "quotes": [
-          "make content for all pages"
+          "use ui like https://vercel.com/"
         ]
       },
       "acceptanceCriteria": [
-        "Clicking the header \"About\" navigation scrolls to a visible About section with meaningful English copy (no placeholder/lorem ipsum).",
-        "Clicking footer legal links (Privacy Policy, Terms of Service, Cookie Policy) scrolls to corresponding sections that contain complete, readable policy text (headings + multi-paragraph content) in English.",
-        "There are no dead in-page links (no nav/footer link pointing to an id that does not exist in the DOM)."
+        "The site’s overall look and feel is recognizably Vercel-inspired: neutral/monochrome palette, crisp borders/dividers, subtle elevation, and restrained accent usage (no bright gradient-forward brand styling as the primary motif).",
+        "No new product features or new pages are introduced; only styling/UX is changed across existing sections (Header, Hero, Services, Proof, Testimonials, Process, About, CTA, Legal, Footer).",
+        "All existing navigation/footer anchor links (#services, #process, #testimonials, #about, #contact, #privacy, #terms, #cookies) continue to work and scroll smoothly.",
+        "All user-facing text remains professional English and retains AMS Digital Agency meaning (do not replace with Vercel product copy)."
       ]
     },
     {
-      "id": "REQ-5",
-      "text": "Rewrite and standardize marketing copy across all existing sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Footer) to be consistent in tone and branding for “AMS Digital Agency”, and ensure all user-facing text is clear, professional English (including buttons, headings, descriptions, trust indicators, stats labels, and helper text).",
+      "id": "REQ-7",
+      "text": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-7"
+          "msg-6"
         ],
         "quotes": [
-          "make content for all pages"
+          "use ui like https://vercel.com/"
         ]
       },
       "acceptanceCriteria": [
-        "All visible text in HeroSection, ServicesSection, ProofSection, TestimonialsSection, ProcessSection, CtaSection, SiteHeader, and SiteFooter is coherent and consistently branded as AMS Digital Agency.",
-        "No section contains generic placeholder copy; all items in arrays (services, steps, metrics, testimonials, trust indicators, footer descriptions) read as intentional final content.",
-        "CTA form helper text, labels/placeholders, and button text remain clear and grammatical in English."
+        "Global theme variables and base styles (e.g., in frontend/src/index.css) are updated to a Vercel-like neutral palette with clear semantic contrast for text, borders, and surfaces.",
+        "Header, buttons, badges, cards, and section wrappers exhibit consistent Vercel-like styling: minimal rounding, subtle shadows (or none), thin borders, and refined hover/focus states.",
+        "The Hero section’s visual treatment is updated away from colorful gradients toward a Vercel-like restrained treatment (e.g., subtle grid/background texture and clean panels) while keeping existing content and CTAs.",
+        "No edits are made to any immutable UI component source files under frontend/src/components/ui or other listed immutablePaths; changes are achieved via composition and styling in editable files."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (shadcn/ui) or any other paths listed as immutable in SYSTEM_CONTEXT.",
-    "Keep the application as a single React frontend (no additional backend services; backend/main.mo remains single-actor)."
+    "Do not edit any files under the frontend immutable paths (including frontend/src/components/ui and the Internet Identity/actor hooks listed as immutable).",
+    "Keep the backend as a single Motoko actor; no backend changes are required for this UI refresh.",
+    "Do not introduce unrelated product features; this request is a visual/UX restyle to match https://vercel.com/."
   ],
   "nonGoals": [
-    "Adding a blog, CMS, or dynamic content management system.",
-    "Implementing real email capture/CRM integration for the CTA form submission.",
-    "Adding new product features beyond writing/adding page and section content."
+    "Adding a blog, CMS, or new site sections not already present in App.tsx.",
+    "Adding authentication changes, backend methods, or persistence (backend/main.mo can remain empty).",
+    "Integrating third-party services or APIs."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

@@ -15,12 +15,15 @@ export function SectionShell({
 }: SectionShellProps) {
   const variantStyles = {
     default: 'bg-background',
-    muted: 'bg-muted/30',
-    highlight: 'bg-accent/5',
+    muted: 'bg-accent/30',
+    highlight: 'bg-accent/50',
   };
 
   return (
-    <section id={id} className={cn(variantStyles[variant], className)}>
+    <section 
+      id={id} 
+      className={cn(variantStyles[variant], 'scroll-mt-20', className)}
+    >
       <div className="container-wide">{children}</div>
     </section>
   );

@@ -1,8 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "Revamp the UI/UX of https://www.amsdigitalagency.com/ to closely match https://seosherpa.com/ and create content for all site pages.",
-  "architectural_notes": [],
+  "projectStateVersion": 7,
+  "summary": "Revamp the UI/UX of https://www.amsdigitalagency.com/ to closely match https://vercel.com/ and create content for all site pages.",
+  "architectural_notes": [
+    "UI/UX reference site has shifted to https://vercel.com/; use it as the primary benchmark for styling and interaction patterns."
+  ],
   "known_issues": [
     "Build process encountered an internal configuration problem (needs platform/team attention if recurring)."
   ],
@@ -47,6 +49,22 @@
         "REQ-5"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-ui-ux-reference-target-from-https-seosherpa-com-to-https-vercel-com-and-restyle-the-existing-ams-digital-agency-single-page-marketing-site-to-closely-match-vercel-s-visual-style-and-interaction-patterns-layout-density-typography-color-system-borders-shadows-hover-focus-states-and-overall-polish-while-keeping-all-existing-section-structure-and-ams-digital-agency-branding-content",
+      "title": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-vercel-like-component-level-styling-updates-across-the-marketing-ui-by-adjusting-the-design-tokens-and-section-component-compositions-e-g-global-theme-variables-container-spacing-utilities-and-section-shells-to-achieve-a-clean-high-contrast-grid-and-divider-forward-aesthetic-that-works-in-both-light-and-dark-modes",
+      "title": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -59,6 +77,12 @@
     {
       "id": "AR-2",
       "summary": "Create/write content for all pages of the AMS Digital Agency site.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Update the UI/UX target reference to match https://vercel.com/ (visual style and interaction patterns).",
       "reqIds": [],
       "status": "pending"
     }

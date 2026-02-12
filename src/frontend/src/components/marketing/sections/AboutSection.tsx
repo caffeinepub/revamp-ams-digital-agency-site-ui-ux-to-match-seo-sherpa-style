@@ -27,12 +27,12 @@ export function AboutSection() {
   ];
 
   return (
-    <SectionShell id="about" variant="muted" className="section-padding">
+    <SectionShell id="about" variant="muted" className="section-padding border-b">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2 className="font-bold mb-6">
           About AMS Digital Agency
         </h2>
-        <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+        <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
           <p>
             AMS Digital Agency is a full-service digital marketing firm dedicated to helping businesses 
             thrive in the digital landscape. Founded by industry veterans with over 15 years of combined 
@@ -52,16 +52,16 @@ export function AboutSection() {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        <h3 className="text-2xl font-bold text-center mb-8">Our Core Values</h3>
+        <h3 className="text-xl font-bold text-center mb-8">Our Core Values</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((value) => (
             <Card key={value.title} className="text-center hover-lift">
               <CardContent className="pt-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 mb-4">
-                  <value.icon className="w-7 h-7 text-primary" />
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-md border bg-accent/50 mb-4">
+                  <value.icon className="w-5 h-5" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">{value.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h4 className="font-semibold text-sm mb-2">{value.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </CardContent>
