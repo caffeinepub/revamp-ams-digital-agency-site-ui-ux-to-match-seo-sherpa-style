@@ -6,26 +6,26 @@ export function ProofSection() {
     {
       icon: Users,
       value: '500+',
-      label: 'Happy Clients',
-      description: 'Businesses trust us',
+      label: 'Satisfied Clients',
+      description: 'Businesses worldwide trust us',
     },
     {
       icon: Rocket,
       value: '1,200+',
-      label: 'Projects Completed',
-      description: 'Successfully delivered',
+      label: 'Projects Delivered',
+      description: 'Successfully completed on time',
     },
     {
       icon: Target,
       value: '250%',
       label: 'Average Growth',
-      description: 'Client traffic increase',
+      description: 'Client traffic increase achieved',
     },
     {
       icon: Award,
       value: '15+',
       label: 'Industry Awards',
-      description: 'Recognition & excellence',
+      description: 'Excellence and innovation recognized',
     },
   ];
 

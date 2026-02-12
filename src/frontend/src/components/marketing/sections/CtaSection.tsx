@@ -27,7 +27,7 @@ export function CtaSection() {
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Join hundreds of successful businesses that have accelerated their growth 
-              with our proven digital marketing strategies.
+              with AMS Digital Agency's proven strategies. Let's create your success story together.
             </p>
 
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -36,7 +36,7 @@ export function CtaSection() {
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                   <Input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Enter your business email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="pl-10 h-12 bg-white/95 border-white/20"
@@ -49,27 +49,27 @@ export function CtaSection() {
                   variant="secondary"
                   className="h-12 px-8"
                 >
-                  Get Started
+                  Get Started Free
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
               <p className="text-sm text-white/70 mt-3">
-                No credit card required. Free consultation included.
+                No credit card required. Free strategy consultation included.
               </p>
             </form>
 
             <div className="flex flex-wrap justify-center gap-8 pt-8 text-white/90">
               <div className="text-center">
                 <div className="text-3xl font-bold">24/7</div>
-                <div className="text-sm">Support</div>
+                <div className="text-sm">Expert Support</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold">100%</div>
-                <div className="text-sm">Satisfaction</div>
+                <div className="text-sm">Satisfaction Guarantee</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold">30-Day</div>
-                <div className="text-sm">Money Back</div>
+                <div className="text-sm">Money-Back Promise</div>
               </div>
             </div>
           </div>

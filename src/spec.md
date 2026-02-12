@@ -1,13 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Revamp the AMS Digital Agency marketing site frontend UI/UX to closely match the visual style and interaction patterns of seosherpa.com, while keeping AMS Digital Agency branding and content.
+**Goal:** Ensure every existing site section and in-page link has complete, readable, consistently branded content for AMS Digital Agency.
 
 **Planned changes:**
-- Redesign primary marketing page sections to follow an SEO Sherpa-like structure (clear top navigation, prominent hero, services/value sections, proof/metrics/testimonials, process, CTA blocks, footer) using AMS content.
-- Establish and apply a consistent design system across the site (typography scale, spacing, buttons/links, cards, section padding) using composed React + Tailwind + shadcn/ui components (no edits to immutable UI sources).
-- Implement SEO Sherpa-like UX details: clean/sticky header behavior as appropriate, strong visual hierarchy, reusable section components, and polished micro-interactions (hover/focus/active states, subtle transitions).
-- Ensure baseline accessibility, performance, and SEO-friendly markup (logical heading hierarchy, alt text, readable contrast, visible focus indicators, stable layouts, avoid heavy assets/animations).
-- Make layouts responsive across mobile/tablet/desktop with no overflow or breakpoint breakage; ensure keyboard-navigable navigation and CTAs.
+- Add an About section with `id="about"` and meaningful English copy, included in the rendered layout.
+- Add complete legal sections with `id="privacy"`, `id="terms"`, and `id="cookies"` (Privacy Policy, Terms of Service, Cookie Policy) and ensure footer legal links scroll to these sections.
+- Rewrite and standardize all existing marketing copy across current sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Header, Footer) to be coherent, professional English and consistently branded as “AMS Digital Agency”.
+- Ensure there are no dead in-page links (all nav/footer anchors point to existing DOM ids).
 
-**User-visible outcome:** The AMS Digital Agency site displays a modern, SEO Sherpa-inspired marketing layout with consistent styling, responsive behavior, accessible navigation/CTAs, and polished interactions—while keeping AMS branding and content in English.
+**User-visible outcome:** Users can navigate to a fully written About section and complete legal policy sections via header/footer links, and all visible site copy reads as finalized, consistent AMS Digital Agency content with no placeholders.

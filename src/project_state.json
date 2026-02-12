@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Revamp the UI/UX of https://www.amsdigitalagency.com/ while keeping the look and user experience similar to https://seosherpa.com/.",
+  "projectStateVersion": 5,
+  "summary": "Revamp the UI/UX of https://www.amsdigitalagency.com/ to closely match https://seosherpa.com/ and create content for all site pages.",
   "architectural_notes": [],
   "known_issues": [
     "Build process encountered an internal configuration problem (needs platform/team attention if recurring)."
@@ -31,12 +31,34 @@
         "REQ-3"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-missing-page-section-content-so-every-existing-navigation-footer-link-target-resolves-to-real-readable-content-implement-an-about-section-with-id-about-and-legal-sections-with-ids-privacy-terms-and-cookies-privacy-policy-terms-of-service-cookie-policy-and-ensure-these-sections-are-included-in-the-rendered-layout",
+      "title": "Add missing page/section content so every existing navigation/footer link target resolves to real, readable content: implement an About section with id=\"#about\" and legal sections with ids \"#privacy\", \"#terms\", and \"#cookies\" (Privacy Policy, Terms of Service, Cookie Policy), and ensure these sections are included in the rendered layout.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rewrite-and-standardize-marketing-copy-across-all-existing-sections-hero-services-proof-metrics-testimonials-process-cta-footer-to-be-consistent-in-tone-and-branding-for-ams-digital-agency-and-ensure-all-user-facing-text-is-clear-professional-english-including-buttons-headings-descriptions-trust-indicators-stats-labels-and-helper-text",
+      "title": "Rewrite and standardize marketing copy across all existing sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Footer) to be consistent in tone and branding for “AMS Digital Agency”, and ensure all user-facing text is clear, professional English (including buttons, headings, descriptions, trust indicators, stats labels, and helper text).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
     {
       "id": "AR-1",
       "summary": "Revamp https://www.amsdigitalagency.com/ UI/UX to closely match the style and UX patterns of https://seosherpa.com/.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create/write content for all pages of the AMS Digital Agency site.",
       "reqIds": [],
       "status": "pending"
     }

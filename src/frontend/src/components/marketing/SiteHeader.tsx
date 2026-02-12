@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 export function SiteHeader() {
@@ -41,14 +41,14 @@ export function SiteHeader() {
       <div className="container-wide">
         <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2 group">
+          <button onClick={() => scrollToSection('#')} className="flex items-center space-x-2 group">
             <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary">
               <span className="text-white font-bold text-xl">A</span>
             </div>
             <span className="font-bold text-xl group-hover:text-primary transition-colors">
               AMS Digital
             </span>
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -70,7 +70,7 @@ export function SiteHeader() {
               className="hidden sm:inline-flex"
               onClick={() => scrollToSection('#contact')}
             >
-              Contact
+              Contact Us
             </Button>
             <Button onClick={() => scrollToSection('#contact')}>
               Get Started

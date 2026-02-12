@@ -2,21 +2,37 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-revamp-the-frontend-ui-ux-to-closely-match-the-visual-style-and-interaction-patterns-of-https-seosherpa-com-while-keeping-the-branding-content-of-https-www-amsdigitalagency-com-focus-on-layout-spacing-typography-component-styling-and-section-structure-do-not-introduce-unrelated-product-features",
-      "featureTitle": "Revamp the frontend UI/UX to closely match the visual style and interaction patterns of https://seosherpa.com/ while keeping the branding/content of https://www.amsdigitalagency.com/. Focus on layout, spacing, typography, component styling, and section structure; do not introduce unrelated product features.",
+      "featureId": "feature-add-missing-page-section-content-so-every-existing-navigation-footer-link-target-resolves-to-real-readable-content-implement-an-about-section-with-id-about-and-legal-sections-with-ids-privacy-terms-and-cookies-privacy-policy-terms-of-service-cookie-policy-and-ensure-these-sections-are-included-in-the-rendered-layout",
+      "featureTitle": "Add missing page/section content so every existing navigation/footer link target resolves to real, readable content: implement an About section with id=\"#about\" and legal sections with ids \"#privacy\", \"#terms\", and \"#cookies\" (Privacy Policy, Terms of Service, Cookie Policy), and ensure these sections are included in the rendered layout.",
       "files": [
         "frontend/src/App.tsx",
+        "frontend/src/components/marketing/sections/AboutSection.tsx",
+        "frontend/src/components/marketing/sections/LegalSections.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-rewrite-and-standardize-marketing-copy-across-all-existing-sections-hero-services-proof-metrics-testimonials-process-cta-footer-to-be-consistent-in-tone-and-branding-for-ams-digital-agency-and-ensure-all-user-facing-text-is-clear-professional-english-including-buttons-headings-descriptions-trust-indicators-stats-labels-and-helper-text",
+      "featureTitle": "Rewrite and standardize marketing copy across all existing sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Footer) to be consistent in tone and branding for “AMS Digital Agency”, and ensure all user-facing text is clear, professional English (including buttons, headings, descriptions, trust indicators, stats labels, and helper text).",
+      "files": [
         "frontend/src/components/marketing/SiteFooter.tsx",
         "frontend/src/components/marketing/SiteHeader.tsx",
         "frontend/src/components/marketing/sections/CtaSection.tsx",
         "frontend/src/components/marketing/sections/HeroSection.tsx",
         "frontend/src/components/marketing/sections/ProcessSection.tsx",
         "frontend/src/components/marketing/sections/ProofSection.tsx",
-        "frontend/src/components/marketing/sections/SectionShell.tsx",
         "frontend/src/components/marketing/sections/ServicesSection.tsx",
-        "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
+        "frontend/src/components/marketing/sections/TestimonialsSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -26,50 +42,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-seo-sherpa-like-ux-details-sticky-clear-header-behavior-strong-visual-hierarchy-reusable-section-components-and-polished-micro-interactions-hover-states-subtle-transitions-using-the-existing-react-tailwind-shadcn-ui-approach-compose-components-without-editing-any-immutable-ui-component-source-files",
-      "featureTitle": "Implement SEO Sherpa-like UX details: sticky/clear header behavior, strong visual hierarchy, reusable section components, and polished micro-interactions (hover states, subtle transitions) using the existing React + Tailwind + shadcn/ui approach (compose components without editing any immutable UI component source files).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/marketing/SiteHeader.tsx",
-        "frontend/src/components/marketing/sections/SectionShell.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-ensure-basic-quality-baselines-for-the-revamped-marketing-site-accessibility-performance-and-seo-friendly-markup",
-      "featureTitle": "Ensure basic quality baselines for the revamped marketing site: accessibility, performance, and SEO-friendly markup.",
-      "files": [
-        "frontend/index.html",
-        "frontend/src/App.tsx",
-        "frontend/src/components/marketing/sections/HeroSection.tsx",
-        "frontend/src/components/marketing/sections/ServicesSection.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
+        "REQ-5"
       ],
       "confidence": "high"
     }

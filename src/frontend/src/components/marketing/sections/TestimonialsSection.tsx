@@ -8,21 +8,21 @@ export function TestimonialsSection() {
     {
       name: 'Sarah Johnson',
       role: 'CEO, TechStart Inc.',
-      content: 'AMS Digital transformed our online presence completely. Within 6 months, our organic traffic increased by 300% and our conversion rate doubled. Their team is professional, responsive, and truly understands digital marketing.',
+      content: 'AMS Digital Agency completely transformed our online presence. Within six months, our organic traffic increased by 300% and our conversion rate doubled. Their team is incredibly professional, responsive, and truly understands the nuances of digital marketing. Best investment we\'ve made for our business.',
       initials: 'SJ',
       rating: 5,
     },
     {
       name: 'Michael Chen',
       role: 'Marketing Director, GrowthCo',
-      content: 'Working with AMS Digital has been a game-changer for our business. Their data-driven approach and strategic insights helped us achieve a 10x ROI on our marketing spend. Highly recommended!',
+      content: 'Working with AMS Digital has been an absolute game-changer for our company. Their data-driven approach and strategic insights helped us achieve a 10x return on our marketing investment. They don\'t just execute campaigns—they become true partners in your success. Highly recommended!',
       initials: 'MC',
       rating: 5,
     },
     {
       name: 'Emily Rodriguez',
       role: 'Founder, EcoShop',
-      content: 'The team at AMS Digital is exceptional. They took the time to understand our business goals and delivered a comprehensive strategy that exceeded our expectations. Our sales have tripled since partnering with them.',
+      content: 'The team at AMS Digital Agency is exceptional. They took the time to deeply understand our business goals and target audience, then delivered a comprehensive strategy that exceeded all our expectations. Our online sales have tripled since partnering with them. Their expertise is unmatched.',
       initials: 'ER',
       rating: 5,
     },
@@ -32,11 +32,11 @@ export function TestimonialsSection() {
     <SectionShell id="testimonials" variant="muted" className="section-padding">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="font-bold mb-4">
-          Trusted by Industry Leaders
+          Trusted by Industry Leaders Worldwide
         </h2>
         <p className="text-xl text-muted-foreground">
-          Don't just take our word for it. Here's what our clients have to say about 
-          working with AMS Digital Agency.
+          Don't just take our word for it. Discover what our clients have to say about 
+          their experience partnering with AMS Digital Agency and the results we've delivered.
         </p>
       </div>
 

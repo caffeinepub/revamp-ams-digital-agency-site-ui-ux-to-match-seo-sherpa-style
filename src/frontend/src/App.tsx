@@ -5,7 +5,9 @@ import { ServicesSection } from './components/marketing/sections/ServicesSection
 import { ProofSection } from './components/marketing/sections/ProofSection';
 import { TestimonialsSection } from './components/marketing/sections/TestimonialsSection';
 import { ProcessSection } from './components/marketing/sections/ProcessSection';
+import { AboutSection } from './components/marketing/sections/AboutSection';
 import { CtaSection } from './components/marketing/sections/CtaSection';
+import { LegalSections } from './components/marketing/sections/LegalSections';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <ProofSection />
         <TestimonialsSection />
         <ProcessSection />
+        <AboutSection />
         <CtaSection />
+        <LegalSections />
       </main>
       <SiteFooter />
     </div>

@@ -10,7 +10,7 @@ export function SiteFooter() {
 
   const footerLinks = {
     services: [
-      { label: 'SEO Services', href: '#services' },
+      { label: 'SEO Optimization', href: '#services' },
       { label: 'Digital Marketing', href: '#services' },
       { label: 'Web Development', href: '#services' },
       { label: 'Content Strategy', href: '#services' },
@@ -18,8 +18,8 @@ export function SiteFooter() {
     company: [
       { label: 'About Us', href: '#about' },
       { label: 'Our Process', href: '#process' },
-      { label: 'Case Studies', href: '#testimonials' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'Client Success Stories', href: '#testimonials' },
+      { label: 'Contact Us', href: '#contact' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '#privacy' },
@@ -51,8 +51,8 @@ export function SiteFooter() {
               </span>
             </a>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Empowering businesses with cutting-edge digital marketing solutions. 
-              We help you grow your online presence and achieve measurable results.
+              Transforming businesses through innovative digital marketing strategies. 
+              We deliver measurable results that drive growth and maximize your online presence.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

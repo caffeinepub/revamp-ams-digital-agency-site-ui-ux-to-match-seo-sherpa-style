@@ -1,155 +1,82 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "AMS Digital Agency marketing UI/UX revamp to SEO Sherpa-like style (React + Tailwind + shadcn/ui)",
+  "title": "Complete AMS Digital Agency marketing-page content and legal/about sections",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Revamp marketing-site UI/UX to SEO Sherpa-like structure while preserving AMS branding/content across primary sections.",
+      "id": "REQ-4",
+      "summary": "Add About and Legal (Privacy/Terms/Cookies) in-page sections and ensure all nav/footer anchors resolve to readable content in the rendered layout.",
       "acceptanceCriteria": [
-        "Primary pages/sections follow an SEO Sherpa-like structure (e.g., clear top navigation, prominent hero, service/value sections, proof/metrics/testimonials, process, CTA blocks, footer) while using AMS Digital Agency content/branding.",
-        "Consistent design system is applied (type scale, spacing scale, button/link styles, card styles, section padding) across all pages/sections.",
-        "All user-facing text is in English.",
-        "Responsive layouts are implemented for mobile, tablet, and desktop with no overflow/layout breakage on common breakpoints.",
-        "Navigation and CTAs are clearly styled and accessible (visible hover/focus states, keyboard navigable)."
+        "Clicking the header \"About\" navigation scrolls to a visible About section with meaningful English copy (no placeholder/lorem ipsum).",
+        "Clicking footer legal links (Privacy Policy, Terms of Service, Cookie Policy) scrolls to corresponding sections that contain complete, readable policy text (headings + multi-paragraph content) in English.",
+        "There are no dead in-page links (no nav/footer link pointing to an id that does not exist in the DOM)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/marketing/sections/AboutSection.tsx",
           "operation": "create",
-          "description": "Create/define global design tokens and baseline styles (font stack, type scale, spacing rhythm, section padding defaults, focus ring styling) to support an SEO Sherpa-like look while retaining AMS branding. Ensure English-only text defaults where applicable (e.g., placeholder copy)."
+          "description": "Create an About section rendered as a real page section with id=\"about\" (via SectionShell) containing meaningful, final English copy for AMS Digital Agency (who we are, what we do, differentiators, values)."
         },
         {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Adjust Tailwind theme extensions to support the new design system (container widths, typography scale helpers, brand color tokens, shadows/radii) consistent with the SEO Sherpa-like aesthetic while keeping AMS brand colors. Use Tailwind utilities rather than custom component edits."
+          "path": "frontend/src/components/marketing/sections/LegalSections.tsx",
+          "operation": "create",
+          "description": "Create legal policy sections containing complete readable English policy text: Privacy Policy (id=\"privacy\"), Terms of Service (id=\"terms\"), and Cookie Policy (id=\"cookies\"). Ensure each policy is a distinct section with headings and multi-paragraph content."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wire a marketing-site layout that matches the requested section structure: top navigation + hero + services/value + proof/metrics + testimonials + process + CTA blocks + footer. Ensure the structure uses semantic sections and AMS content/branding. Use the shadcn-ui component set by composition (e.g., Button/Card/Accordion) without editing immutable UI source files. Verify the component's usage instructions before implementing."
-        },
+          "description": "Wire the new About and Legal sections into the existing single-page layout so the header/footer hash links (#about, #privacy, #terms, #cookies) resolve to elements present in the DOM."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Rewrite and standardize all existing marketing-page copy to a consistent, professional AMS Digital Agency brand voice across header, sections, CTAs, and footer.",
+      "acceptanceCriteria": [
+        "All visible text in HeroSection, ServicesSection, ProofSection, TestimonialsSection, ProcessSection, CtaSection, SiteHeader, and SiteFooter is coherent and consistently branded as AMS Digital Agency.",
+        "No section contains generic placeholder copy; all items in arrays (services, steps, metrics, testimonials, trust indicators, footer descriptions) read as intentional final content.",
+        "CTA form helper text, labels/placeholders, and button text remain clear and grammatical in English."
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/components/marketing/SiteHeader.tsx",
-          "operation": "create",
-          "description": "Create a reusable header/navigation component with SEO Sherpa-like layout (logo left, primary nav, prominent primary CTA). Implement accessible navigation semantics and keyboard support; keep copy in English. Use shadcn-ui Button (and related primitives if needed) by composition; do not edit immutable UI files. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/marketing/SiteFooter.tsx",
-          "operation": "create",
-          "description": "Create a structured footer (service links, company/contact, legal, social, final CTA) consistent with the new design system and AMS branding. Ensure semantic markup and accessible link styling; English text only."
+          "operation": "modify",
+          "description": "Standardize header branding and navigation/CTA text to match the AMS Digital Agency voice; ensure the About nav item continues to target #about and user-facing strings are consistent and professional."
         },
         {
           "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "operation": "create",
-          "description": "Create an SEO Sherpa-like hero section (strong headline, supporting paragraph, primary+secondary CTAs, trust/proof row). Use responsive layout and consistent spacing/typography; English text only. Compose shadcn-ui Buttons/Cards as needed without editing immutable UI files. Verify the component's usage instructions before implementing."
+          "operation": "modify",
+          "description": "Rewrite hero headline/subheadline, trust indicators, stat labels, and CTA button text to consistent AMS Digital Agency marketing copy (final English, no generic placeholders)."
         },
         {
           "path": "frontend/src/components/marketing/sections/ServicesSection.tsx",
-          "operation": "create",
-          "description": "Create a services/value section using reusable cards (icon/heading/description + link/CTA) matching the new spacing, typography, and hover states. Compose shadcn-ui Card and Button components; do not modify immutable UI files. Verify the component's usage instructions before implementing."
+          "operation": "modify",
+          "description": "Rewrite services section heading/intro plus each service title/description/features and card CTA text to consistent, final AMS Digital Agency copy."
         },
         {
           "path": "frontend/src/components/marketing/sections/ProofSection.tsx",
-          "operation": "create",
-          "description": "Create a proof/metrics section (numbers, badges, short claims) with a clean grid and consistent visual hierarchy. Ensure responsive behavior and stable layout (no shifting)."
+          "operation": "modify",
+          "description": "Rewrite proof/metrics labels and descriptions to be specific, credible, and consistently branded for AMS Digital Agency."
         },
         {
           "path": "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-          "operation": "create",
-          "description": "Create a testimonials/social proof section (cards/quotes) with accessible typography and consistent card styling. Compose shadcn-ui Card (and optional carousel-like layout using simple CSS/scroll snapping if needed) without editing immutable UI files. Verify the component's usage instructions before implementing."
+          "operation": "modify",
+          "description": "Rewrite testimonials section heading/intro and testimonial names/roles/content as polished, intentional final copy aligned with AMS Digital Agency tone (avoid placeholder-style statements)."
         },
         {
           "path": "frontend/src/components/marketing/sections/ProcessSection.tsx",
-          "operation": "create",
-          "description": "Create a process section (step-by-step) in an SEO Sherpa-like style (numbered steps, concise descriptions). Optionally compose shadcn-ui Accordion for mobile-friendly disclosure while keeping content easily scannable; do not modify immutable UI files. Verify the component's usage instructions before implementing."
+          "operation": "modify",
+          "description": "Rewrite process section heading/intro and each step title/description to consistent, professional AMS Digital Agency messaging."
         },
         {
           "path": "frontend/src/components/marketing/sections/CtaSection.tsx",
-          "operation": "create",
-          "description": "Create a reusable CTA block component (headline, supporting text, primary CTA) with high-contrast styling consistent with the design system and clear focus/hover states. Compose shadcn-ui Button without editing immutable UI files. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/marketing/sections/SectionShell.tsx",
-          "operation": "create",
-          "description": "Create a reusable section wrapper (consistent max width, padding, optional background variants) to enforce consistent section structure/spacing across the marketing UI."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Implement SEO Sherpa-like UX details: sticky/clear header, strong hierarchy, reusable sections, and polished micro-interactions using React + Tailwind + shadcn/ui composition only.",
-      "acceptanceCriteria": [
-        "Header/navigation behavior and styling feels comparable to SEO Sherpa (clean, prominent CTAs, consistent spacing, optional sticky behavior if appropriate).",
-        "Buttons, links, and cards have consistent hover/active/focus states and use subtle transitions (no jarring animations).",
-        "All new UI is built by composing existing UI components; no changes are required in immutable paths under frontend/src/components/ui or listed immutable hook/main files."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/marketing/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Add sticky/clear header behavior (e.g., sticky on scroll, subtle background/blur, shadow, and height transitions) while preserving accessibility (skip link support, focus management, keyboard navigable menus). Ensure interaction patterns align with SEO Sherpa-like polish; keep animations subtle."
+          "description": "Rewrite CTA heading/description, form placeholder/button text, helper text, and trust badges/labels to consistent AMS Digital Agency messaging while keeping the form semantics unchanged (no real submission integration)."
         },
         {
-          "path": "frontend/src/components/marketing/sections/SectionShell.tsx",
+          "path": "frontend/src/components/marketing/SiteFooter.tsx",
           "operation": "modify",
-          "description": "Add variants (e.g., default, muted, highlight) and consistent vertical rhythm utilities to standardize section spacing and visual hierarchy across the site."
-        },
-        {
-          "path": "frontend/src/components/marketing/interaction/motion.ts",
-          "operation": "create",
-          "description": "Create a small, reusable set of motion/transition utility classnames (e.g., consistent durations/easings for hover/focus/active) to ensure micro-interactions are uniform and subtle across buttons/links/cards."
-        },
-        {
-          "path": "frontend/src/components/marketing/interaction/FocusRing.tsx",
-          "operation": "create",
-          "description": "Create a tiny wrapper/utility component (or exported class helper) to standardize visible focus indicators across interactive elements without modifying immutable shadcn/ui sources."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Implement global hover/focus/active styling conventions (focus-visible rings, link underlines, button transitions, card hover elevation) using Tailwind layers/utilities so all composed components share consistent micro-interactions. Ensure no reliance on editing immutable UI component files."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Ensure all newly created marketing sections are composed via the reusable section components and consistent interaction utilities; confirm no immutable shadcn/ui source files are edited. Use shadcn-ui components by composition only. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Meet baseline accessibility, performance, and SEO-friendly markup for the revamped marketing site.",
-      "acceptanceCriteria": [
-        "All images include appropriate alt text; headings follow a logical hierarchy (H1 once per page, then H2/H3).",
-        "Color contrast is readable for primary text on backgrounds; interactive elements have visible focus indicators.",
-        "Pages avoid unnecessary heavy assets/animations; layout remains stable (no major cumulative layout shifts during load)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Improve SEO-friendly document metadata and structure (ensure lang is set, add descriptive title/metadata placeholders aligned to AMS branding, and ensure the root structure supports stable layout). Keep all user-facing text in English."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Ensure semantic, SEO-friendly markup in the marketing layout: a single H1 in the hero, subsequent sections use H2/H3 logically; use <main>/<header>/<nav>/<footer>; ensure CTAs are proper buttons/links. Confirm stable layout (avoid late-loading height changes) and avoid heavy animations."
-        },
-        {
-          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Enforce heading hierarchy (single H1), add any hero imagery with explicit dimensions and meaningful alt text (or omit decorative images), and ensure CTAs have accessible names and visible focus states."
-        },
-        {
-          "path": "frontend/src/components/marketing/sections/ServicesSection.tsx",
-          "operation": "modify",
-          "description": "Ensure card/link semantics are accessible (proper headings, aria-labels where necessary), hover states don’t reduce contrast, and layouts don’t overflow at common breakpoints."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Validate/adjust contrast-sensitive tokens and focus-visible styling to meet readability; reduce motion where appropriate (respect prefers-reduced-motion) to support accessibility and prevent jarring animations."
+          "description": "Rewrite footer brand description, column headings/link labels (as needed), and any helper text to align with the standardized AMS Digital Agency voice while preserving existing in-page href targets (including #privacy/#terms/#cookies)."
         }
       ]
     }

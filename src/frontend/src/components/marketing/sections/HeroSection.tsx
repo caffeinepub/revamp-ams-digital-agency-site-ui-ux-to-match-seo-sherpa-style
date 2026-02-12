@@ -19,9 +19,9 @@ export function HeroSection() {
   };
 
   const trustIndicators = [
-    '500+ Projects Delivered',
-    '98% Client Satisfaction',
-    'Award-Winning Team',
+    '500+ Successful Projects',
+    '98% Client Retention Rate',
+    'Award-Winning Strategies',
   ];
 
   return (
@@ -31,28 +31,28 @@ export function HeroSection() {
         <div className="space-y-8">
           <Badge variant="secondary" className="w-fit">
             <TrendingUp className="w-3 h-3 mr-1" />
-            #1 Digital Marketing Agency
+            Leading Digital Marketing Agency
           </Badge>
           
           <div className="space-y-4">
             <h1 className="font-bold">
-              Transform Your Digital Presence with{' '}
-              <span className="gradient-text">Data-Driven Marketing</span>
+              Accelerate Your Growth with{' '}
+              <span className="gradient-text">Strategic Digital Marketing</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We help businesses scale their online presence through strategic SEO, 
-              innovative digital marketing, and cutting-edge web solutions that deliver 
-              measurable results.
+              Partner with AMS Digital Agency to transform your online presence. We combine 
+              data-driven insights, creative excellence, and proven strategies to deliver 
+              exceptional results that scale your business.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" onClick={scrollToContact} className="text-base">
-              Get Started Today
+              Start Your Journey
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={scrollToServices}>
-              Explore Services
+              Explore Our Services
             </Button>
           </div>
 
@@ -75,11 +75,11 @@ export function HeroSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-background/80 backdrop-blur-sm rounded-xl p-6 border shadow-sm hover-lift">
                   <div className="text-3xl font-bold text-primary mb-1">250%</div>
-                  <div className="text-sm text-muted-foreground">Avg. Traffic Growth</div>
+                  <div className="text-sm text-muted-foreground">Average Traffic Growth</div>
                 </div>
                 <div className="bg-background/80 backdrop-blur-sm rounded-xl p-6 border shadow-sm hover-lift">
                   <div className="text-3xl font-bold text-secondary mb-1">10x</div>
-                  <div className="text-sm text-muted-foreground">ROI Increase</div>
+                  <div className="text-sm text-muted-foreground">Return on Investment</div>
                 </div>
               </div>
               

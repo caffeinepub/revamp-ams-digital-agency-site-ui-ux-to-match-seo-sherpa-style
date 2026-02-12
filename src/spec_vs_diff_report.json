@@ -1,78 +1,43 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-12T11:23:55.398Z",
-  "summary": "The diff adds a new single-page marketing layout (header, hero, services, proof, testimonials, process, CTA, footer) with a Tailwind design system and sticky header/micro-interactions. However, some requested structure/content alignment and SEO/accessibility details are either missing or cannot be verified from the truncated diff, and a few added features (auth/actor hooks, backend stub, email capture behavior) are not requested by the build requirements.",
+  "generatedAt": "2026-02-12T14:11:15.756Z",
+  "summary": "Diff adds an About section and a LegalSections component and wires them into the single-page App layout; it also rewrites marketing copy in multiple existing sections. However, the diff summary only clearly shows a #privacy legal section (with the rest truncated), and SiteHeader branding text appears inconsistent with the requested “AMS Digital Agency” naming.",
   "missing_requirements": [
     {
-      "id": "REQ-1",
-      "requirement": "Primary pages/sections follow an SEO Sherpa-like structure while using AMS Digital Agency content/branding (including referenced navigation sections).",
-      "reason": "Navigation includes an \"About\" link to #about, but App.tsx does not render any About section/component, so that section structure appears incomplete/broken.",
+      "id": "REQ-4",
+      "requirement": "Legal sections with ids \"#terms\" and \"#cookies\" must exist in the DOM with complete, readable multi-paragraph policy text, and footer legal links must not be dead.",
+      "reason": "LegalSections.tsx is truncated in the diff summary and only explicitly shows a Privacy Policy block with id=\"privacy\"; there is no visible evidence that \"terms\" and \"cookies\" sections (ids and full text) are implemented.",
       "evidence": [
-        "frontend/src/components/marketing/SiteHeader.tsx",
-        "frontend/src/App.tsx",
-        "frontend/src/components/marketing/SiteFooter.tsx"
+        "frontend/src/components/marketing/sections/LegalSections.tsx (truncated)",
+        "frontend/src/components/marketing/SiteFooter.tsx (legal links point to #terms and #cookies)"
       ]
     },
     {
-      "id": "REQ-3",
-      "requirement": "SEO-friendly markup and accessibility baselines (e.g., headings logical hierarchy and stable, complete section anchors).",
-      "reason": "Footer includes links to #privacy, #terms, and #cookies, but no corresponding sections are present in the composed page, which can harm UX/SEO (dead anchors) and navigability.",
+      "id": "REQ-5",
+      "requirement": "All visible text in SiteHeader should be coherent and consistently branded as “AMS Digital Agency”.",
+      "reason": "SiteHeader logo/brand text shows “AMS Digital”, while other areas (e.g., footer and sections) use “AMS Digital Agency”, indicating branding is not fully standardized in the header.",
       "evidence": [
-        "frontend/src/components/marketing/SiteFooter.tsx",
-        "frontend/src/App.tsx"
+        "frontend/src/components/marketing/SiteHeader.tsx (shows brand text \"AMS Digital\")",
+        "frontend/src/components/marketing/SiteFooter.tsx (shows \"AMS Digital Agency\")"
       ]
     }
   ],
-  "hallucinated_features": [
-    {
-      "description": "Internet Identity authentication context and actor creation/invalidation logic via React Query hooks.",
-      "reason": "The BuildRequest is a marketing-site UI/UX revamp and explicitly lists auth-provider changes as a non-goal; adding auth/actor plumbing is not requested for the UI/UX revamp itself.",
-      "evidence": [
-        "frontend/src/main.tsx",
-        "frontend/src/hooks/useInternetIdentity.ts",
-        "frontend/src/hooks/useActor.ts"
-      ]
-    },
-    {
-      "description": "Backend canister stub added with an empty actor.",
-      "reason": "No backend changes are required for the UI/UX revamp; adding a new backend main.mo is not requested and may be unrelated to the frontend styling goals.",
-      "evidence": [
-        "backend/main.mo"
-      ]
-    },
-    {
-      "description": "Email capture form that logs submitted email to console plus marketing claims (e.g., money-back guarantee, free consultation).",
-      "reason": "The request emphasized keeping AMS Digital Agency branding/content and not introducing unrelated product features; this adds lead-capture behavior and new promises that are not evidenced as part of the requested content migration.",
-      "evidence": [
-        "frontend/src/components/marketing/sections/CtaSection.tsx"
-      ]
-    }
-  ],
-  "confidence": 0.66,
+  "hallucinated_features": [],
+  "confidence": 0.68,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
-    "frontend/index.html",
     "frontend/src/App.tsx",
     "frontend/src/components/marketing/SiteFooter.tsx",
     "frontend/src/components/marketing/SiteHeader.tsx",
+    "frontend/src/components/marketing/sections/AboutSection.tsx",
     "frontend/src/components/marketing/sections/CtaSection.tsx",
     "frontend/src/components/marketing/sections/HeroSection.tsx",
+    "frontend/src/components/marketing/sections/LegalSections.tsx",
     "frontend/src/components/marketing/sections/ProcessSection.tsx",
     "frontend/src/components/marketing/sections/ProofSection.tsx",
-    "frontend/src/components/marketing/sections/SectionShell.tsx",
     "frontend/src/components/marketing/sections/ServicesSection.tsx",
     "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/lib/utils.ts",
-    "frontend/src/main.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

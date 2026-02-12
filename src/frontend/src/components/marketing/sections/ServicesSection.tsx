@@ -8,50 +8,57 @@ export function ServicesSection() {
     {
       icon: Search,
       title: 'SEO Optimization',
-      description: 'Dominate search rankings with our proven SEO strategies. We optimize your website for maximum visibility and organic traffic growth.',
-      features: ['Keyword Research', 'Technical SEO', 'Link Building'],
+      description: 'Dominate search engine rankings with our comprehensive SEO strategies. We optimize every aspect of your online presence to drive sustainable organic growth and visibility.',
+      features: ['Technical SEO Audits', 'Keyword Research & Strategy', 'Link Building & Authority'],
     },
     {
       icon: Megaphone,
       title: 'Digital Marketing',
-      description: 'Comprehensive digital marketing campaigns that drive engagement, conversions, and sustainable business growth.',
-      features: ['PPC Campaigns', 'Social Media', 'Email Marketing'],
+      description: 'Full-spectrum digital marketing campaigns designed to engage your audience, drive conversions, and build lasting customer relationships across all channels.',
+      features: ['PPC & Paid Advertising', 'Social Media Marketing', 'Email Campaign Management'],
     },
     {
       icon: Code,
       title: 'Web Development',
-      description: 'Build fast, responsive, and conversion-optimized websites that provide exceptional user experiences.',
-      features: ['Custom Development', 'E-commerce', 'CMS Solutions'],
+      description: 'Create stunning, high-performance websites that captivate visitors and convert them into customers. Built with the latest technologies for speed and scalability.',
+      features: ['Custom Web Applications', 'E-commerce Solutions', 'Responsive Design & UX'],
     },
     {
       icon: PenTool,
       title: 'Content Strategy',
-      description: 'Engaging content that resonates with your audience and establishes your brand as an industry authority.',
-      features: ['Content Creation', 'Copywriting', 'Brand Storytelling'],
+      description: 'Compelling content that tells your brand story, engages your audience, and establishes your authority in your industry. From blogs to video, we create content that converts.',
+      features: ['Content Marketing Plans', 'Professional Copywriting', 'Brand Voice Development'],
     },
     {
       icon: BarChart3,
       title: 'Analytics & Insights',
-      description: 'Data-driven insights that inform strategy and maximize ROI. Track, measure, and optimize every campaign.',
-      features: ['Performance Tracking', 'A/B Testing', 'Reporting'],
+      description: 'Transform data into actionable insights. Our advanced analytics track every metric that matters, helping you make informed decisions and maximize your marketing ROI.',
+      features: ['Performance Dashboards', 'A/B Testing & Optimization', 'Custom Reporting Solutions'],
     },
     {
       icon: TrendingUp,
       title: 'Growth Marketing',
-      description: 'Scalable growth strategies that accelerate your business. From acquisition to retention, we optimize every funnel stage.',
-      features: ['Conversion Optimization', 'Funnel Analysis', 'Retention Strategy'],
+      description: 'Accelerate your business growth with proven strategies that optimize every stage of your customer journey. From acquisition to retention, we drive sustainable expansion.',
+      features: ['Conversion Rate Optimization', 'Customer Journey Mapping', 'Retention & Loyalty Programs'],
     },
   ];
+
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <SectionShell id="services" variant="muted" className="section-padding">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2 className="font-bold mb-4">
-          Comprehensive Digital Solutions
+          Comprehensive Digital Solutions for Modern Businesses
         </h2>
         <p className="text-xl text-muted-foreground">
-          From strategy to execution, we provide end-to-end digital marketing services 
-          that drive real business results.
+          From strategic planning to flawless execution, we deliver end-to-end digital marketing 
+          services that transform your online presence and drive measurable business growth.
         </p>
       </div>
 
@@ -59,24 +66,24 @@ export function ServicesSection() {
         {services.map((service) => (
           <Card key={service.title} className="hover-lift border-2 hover:border-primary/20">
             <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-4">
                 <service.icon className="w-6 h-6 text-primary" />
               </div>
               <CardTitle className="text-xl">{service.title}</CardTitle>
-              <CardDescription className="text-base">
+              <CardDescription className="text-base leading-relaxed">
                 {service.description}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 mb-4">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
-                    {feature}
+                  <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Button variant="ghost" className="w-full group">
+              <Button variant="ghost" className="w-full group" onClick={scrollToContact}>
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
