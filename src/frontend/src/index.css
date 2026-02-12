@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* Brand colors - AMS Digital Agency inspired with SEO Sherpa polish */
+        --background: 1 0 0;
+        --foreground: 0.15 0 0;
+        
+        --card: 0.99 0 0;
+        --card-foreground: 0.15 0 0;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        
+        /* Primary: Deep professional blue */
+        --primary: 0.45 0.15 250;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Secondary: Vibrant accent */
+        --secondary: 0.65 0.20 30;
+        --secondary-foreground: 0.99 0 0;
+        
+        --muted: 0.96 0 0;
+        --muted-foreground: 0.50 0 0;
+        
+        --accent: 0.97 0 0;
+        --accent-foreground: 0.20 0 0;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0 0;
+        
+        --border: 0.90 0 0;
+        --input: 0.92 0 0;
+        --ring: 0.45 0.15 250;
+        
+        --success: 0.60 0.15 150;
+        --warning: 0.70 0.18 60;
+    }
+
+    .dark {
+        --background: 0.12 0 0;
+        --foreground: 0.98 0 0;
+        
+        --card: 0.16 0 0;
+        --card-foreground: 0.98 0 0;
+        
+        --popover: 0.14 0 0;
+        --popover-foreground: 0.98 0 0;
+        
+        --primary: 0.65 0.18 250;
+        --primary-foreground: 0.98 0 0;
+        
+        --secondary: 0.70 0.22 30;
+        --secondary-foreground: 0.98 0 0;
+        
+        --muted: 0.20 0 0;
+        --muted-foreground: 0.65 0 0;
+        
+        --accent: 0.25 0 0;
+        --accent-foreground: 0.98 0 0;
+        
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        --border: 0.25 0 0;
+        --input: 0.22 0 0;
+        --ring: 0.65 0.18 250;
+        
+        --success: 0.65 0.16 150;
+        --warning: 0.75 0.20 60;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Typography scale */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold tracking-tight;
+    }
+    
+    h1 {
+        @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+    }
+    
+    h2 {
+        @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+    }
+    
+    h3 {
+        @apply text-2xl md:text-3xl leading-snug;
+    }
+    
+    h4 {
+        @apply text-xl md:text-2xl leading-snug;
+    }
+    
+    /* Focus visible styling */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+    
+    /* Smooth transitions */
+    a, button {
+        @apply transition-colors duration-200;
+    }
+}
+
+@layer components {
+    /* Section spacing utilities */
+    .section-padding {
+        @apply py-16 md:py-24 lg:py-32;
+    }
+    
+    .section-padding-sm {
+        @apply py-12 md:py-16 lg:py-20;
+    }
+    
+    .section-padding-lg {
+        @apply py-20 md:py-32 lg:py-40;
+    }
+    
+    /* Container utilities */
+    .container-narrow {
+        @apply container max-w-4xl;
+    }
+    
+    .container-wide {
+        @apply container max-w-7xl;
+    }
+    
+    /* Hover lift effect for cards */
+    .hover-lift {
+        @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    }
+    
+    /* Gradient text */
+    .gradient-text {
+        @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    }
+    
+    /* Link styles */
+    .link-underline {
+        @apply underline decoration-2 underline-offset-4 decoration-primary/30 hover:decoration-primary transition-colors;
+    }
+}
+
+@layer utilities {
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}

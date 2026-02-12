@@ -1,0 +1,75 @@
+{
+  "kind": "build_request",
+  "title": "Revamp AMS Digital Agency site UI/UX to match SEO Sherpa style",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Revamp the frontend UI/UX to closely match the visual style and interaction patterns of https://seosherpa.com/ while keeping the branding/content of https://www.amsdigitalagency.com/. Focus on layout, spacing, typography, component styling, and section structure; do not introduce unrelated product features.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "REVAMP WEBSITE UI UX FOR https://www.amsdigitalagency.com/ KEEPING UI UX SIMILAR TO https://seosherpa.com/"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Primary pages/sections follow an SEO Sherpa-like structure (e.g., clear top navigation, prominent hero, service/value sections, proof/metrics/testimonials, process, CTA blocks, footer) while using AMS Digital Agency content/branding.",
+        "Consistent design system is applied (type scale, spacing scale, button/link styles, card styles, section padding) across all pages/sections.",
+        "All user-facing text is in English.",
+        "Responsive layouts are implemented for mobile, tablet, and desktop with no overflow/layout breakage on common breakpoints.",
+        "Navigation and CTAs are clearly styled and accessible (visible hover/focus states, keyboard navigable)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement SEO Sherpa-like UX details: sticky/clear header behavior, strong visual hierarchy, reusable section components, and polished micro-interactions (hover states, subtle transitions) using the existing React + Tailwind + shadcn/ui approach (compose components without editing any immutable UI component source files).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "KEEPING UI UX SIMILAR TO https://seosherpa.com/"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header/navigation behavior and styling feels comparable to SEO Sherpa (clean, prominent CTAs, consistent spacing, optional sticky behavior if appropriate).",
+        "Buttons, links, and cards have consistent hover/active/focus states and use subtle transitions (no jarring animations).",
+        "All new UI is built by composing existing UI components; no changes are required in immutable paths under frontend/src/components/ui or listed immutable hook/main files."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Ensure basic quality baselines for the revamped marketing site: accessibility, performance, and SEO-friendly markup.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All images include appropriate alt text; headings follow a logical hierarchy (H1 once per page, then H2/H3).",
+        "Color contrast is readable for primary text on backgrounds; interactive elements have visible focus indicators.",
+        "Pages avoid unnecessary heavy assets/animations; layout remains stable (no major cumulative layout shifts during load)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not edit files in frontend immutablePaths (compose them instead).",
+    "Stay within the pre-injected React + TypeScript + Tailwind + shadcn/ui + React Query template and single-actor Motoko backend constraints."
+  ],
+  "nonGoals": [
+    "Rebuilding or scraping the live contents of https://www.amsdigitalagency.com/ automatically.",
+    "Adding third-party authentication providers beyond Internet Identity.",
+    "Adding real-time features (WebSockets) or third-party email/SMS integrations.",
+    "Changing backend data models unless required for the UI/UX revamp."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

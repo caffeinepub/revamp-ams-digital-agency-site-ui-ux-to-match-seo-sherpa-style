@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Revamp the UI/UX of https://www.amsdigitalagency.com/ while keeping the look and user experience similar to https://seosherpa.com/.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Build process encountered an internal configuration problem (needs platform/team attention if recurring)."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-revamp-the-frontend-ui-ux-to-closely-match-the-visual-style-and-interaction-patterns-of-https-seosherpa-com-while-keeping-the-branding-content-of-https-www-amsdigitalagency-com-focus-on-layout-spacing-typography-component-styling-and-section-structure-do-not-introduce-unrelated-product-features",
+      "title": "Revamp the frontend UI/UX to closely match the visual style and interaction patterns of https://seosherpa.com/ while keeping the branding/content of https://www.amsdigitalagency.com/. Focus on layout, spacing, typography, component styling, and section structure; do not introduce unrelated product features.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-seo-sherpa-like-ux-details-sticky-clear-header-behavior-strong-visual-hierarchy-reusable-section-components-and-polished-micro-interactions-hover-states-subtle-transitions-using-the-existing-react-tailwind-shadcn-ui-approach-compose-components-without-editing-any-immutable-ui-component-source-files",
+      "title": "Implement SEO Sherpa-like UX details: sticky/clear header behavior, strong visual hierarchy, reusable section components, and polished micro-interactions (hover states, subtle transitions) using the existing React + Tailwind + shadcn/ui approach (compose components without editing any immutable UI component source files).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-basic-quality-baselines-for-the-revamped-marketing-site-accessibility-performance-and-seo-friendly-markup",
+      "title": "Ensure basic quality baselines for the revamped marketing site: accessibility, performance, and SEO-friendly markup.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Revamp https://www.amsdigitalagency.com/ UI/UX to closely match the style and UX patterns of https://seosherpa.com/.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Revamp AMS Digital Agency site UI/UX to match SEO Sherpa style",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

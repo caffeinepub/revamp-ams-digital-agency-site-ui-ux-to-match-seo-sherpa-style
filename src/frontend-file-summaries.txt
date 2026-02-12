@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH color system, custom design tokens for AMS Digital Agency brand (professional blue primary, vibrant orange secondary), typography scale, section spacing utilities, hover effects, and accessibility features including focus states and reduced motion support.",
+  "frontend/src/App.tsx": "Main application component that composes the complete marketing website layout with header, hero, services, proof, testimonials, process, CTA sections, and footer in a single-page structure.",
+  "frontend/src/components/marketing/SiteHeader.tsx": "Sticky header component with logo, desktop/mobile navigation, smooth scroll to sections, backdrop blur on scroll, and responsive mobile menu using Sheet component.",
+  "frontend/src/components/marketing/SiteFooter.tsx": "Comprehensive footer with brand info, service/company/legal link columns, social media icons, and Caffeine.ai attribution with dynamic year and UTM tracking.",
+  "frontend/src/components/marketing/sections/HeroSection.tsx": "Hero section with compelling headline, trust indicators, dual CTAs, and visual stats cards showcasing campaign performance metrics in a modern gradient layout.",
+  "frontend/src/components/marketing/sections/ServicesSection.tsx": "Services grid displaying six core offerings (SEO, Digital Marketing, Web Development, Content Strategy, Analytics, Growth Marketing) with icons, descriptions, features, and hover effects.",
+  "frontend/src/components/marketing/sections/ProofSection.tsx": "Social proof section with four key metrics (500+ clients, 1200+ projects, 250% growth, 15+ awards) displayed in a responsive grid with gradient icons.",
+  "frontend/src/components/marketing/sections/TestimonialsSection.tsx": "Client testimonials section with three cards featuring 5-star ratings, detailed quotes, and client avatars with role information.",
+  "frontend/src/components/marketing/sections/ProcessSection.tsx": "Four-step process section (Discovery, Strategy, Implementation, Monitor) with numbered cards, icons, and detailed descriptions of the agency's methodology.",
+  "frontend/src/components/marketing/sections/CtaSection.tsx": "Call-to-action section with gradient background, email capture form, trust badges (24/7 support, 100% satisfaction, 30-day guarantee), and prominent CTA button.",
+  "frontend/src/components/marketing/sections/SectionShell.tsx": "Reusable section wrapper component with variant support (default, muted, highlight) for consistent spacing and background styling across all sections.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge for consistent className handling.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with custom container padding, enhanced shadows, success/warning colors, grid background utilities, and design system tokens matching the AMS brand.",
+  "frontend/index.html": "HTML document with proper semantic structure, SEO meta tags, and descriptive title for the AMS Digital Agency marketing website.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for future React Query hooks when backend functionality is added."
+}

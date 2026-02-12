@@ -1,0 +1,77 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-revamp-the-frontend-ui-ux-to-closely-match-the-visual-style-and-interaction-patterns-of-https-seosherpa-com-while-keeping-the-branding-content-of-https-www-amsdigitalagency-com-focus-on-layout-spacing-typography-component-styling-and-section-structure-do-not-introduce-unrelated-product-features",
+      "featureTitle": "Revamp the frontend UI/UX to closely match the visual style and interaction patterns of https://seosherpa.com/ while keeping the branding/content of https://www.amsdigitalagency.com/. Focus on layout, spacing, typography, component styling, and section structure; do not introduce unrelated product features.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/SiteFooter.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/components/marketing/sections/CtaSection.tsx",
+        "frontend/src/components/marketing/sections/HeroSection.tsx",
+        "frontend/src/components/marketing/sections/ProcessSection.tsx",
+        "frontend/src/components/marketing/sections/ProofSection.tsx",
+        "frontend/src/components/marketing/sections/SectionShell.tsx",
+        "frontend/src/components/marketing/sections/ServicesSection.tsx",
+        "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-seo-sherpa-like-ux-details-sticky-clear-header-behavior-strong-visual-hierarchy-reusable-section-components-and-polished-micro-interactions-hover-states-subtle-transitions-using-the-existing-react-tailwind-shadcn-ui-approach-compose-components-without-editing-any-immutable-ui-component-source-files",
+      "featureTitle": "Implement SEO Sherpa-like UX details: sticky/clear header behavior, strong visual hierarchy, reusable section components, and polished micro-interactions (hover states, subtle transitions) using the existing React + Tailwind + shadcn/ui approach (compose components without editing any immutable UI component source files).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/components/marketing/sections/SectionShell.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-basic-quality-baselines-for-the-revamped-marketing-site-accessibility-performance-and-seo-friendly-markup",
+      "featureTitle": "Ensure basic quality baselines for the revamped marketing site: accessibility, performance, and SEO-friendly markup.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/sections/HeroSection.tsx",
+        "frontend/src/components/marketing/sections/ServicesSection.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
