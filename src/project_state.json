@@ -1,68 +1,91 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
-  "summary": "Revamp the UI/UX of https://www.amsdigitalagency.com/ to closely match https://vercel.com/ and create content for all site pages.",
+  "projectStateVersion": 3,
+  "summary": "Build an AMS Digital-style marketing website centered on client success stories, recreating key site pages and services content by extracting/carrying over content from the existing AMS Digital URLs (especially the portfolio).",
   "architectural_notes": [
-    "UI/UX reference site has shifted to https://vercel.com/; use it as the primary benchmark for styling and interaction patterns."
+    "Content source is the existing AMS Digital website pages provided by the user; portfolio page is the primary source for success stories/case studies."
   ],
-  "known_issues": [
-    "Build process encountered an internal configuration problem (needs platform/team attention if recurring)."
-  ],
+  "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Modern agency hero illustration with abstract shapes and subtle success/metrics motifs (ams-hero-visual.dim_1600x900.png)\n- Set of 6–9 case study thumbnail images in a consistent style (ams-case-thumb-set.dim_1200x800.png)\n- Minimal icon set for services in a consistent outline style (ams-services-icons-sprite.dim_1024x1024.png)",
   "existing_features": [
     {
-      "id": "feature-revamp-the-frontend-ui-ux-to-closely-match-the-visual-style-and-interaction-patterns-of-https-seosherpa-com-while-keeping-the-branding-content-of-https-www-amsdigitalagency-com-focus-on-layout-spacing-typography-component-styling-and-section-structure-do-not-introduce-unrelated-product-features",
-      "title": "Revamp the frontend UI/UX to closely match the visual style and interaction patterns of https://seosherpa.com/ while keeping the branding/content of https://www.amsdigitalagency.com/. Focus on layout, spacing, typography, component styling, and section structure; do not introduce unrelated product features.",
+      "id": "feature-implement-a-multi-page-site-structure-that-mirrors-the-provided-ams-digital-urls-using-client-side-routing-so-each-of-these-paths-renders-a-dedicated-page-home-about-portfolio-blogs-contact-customer-reviews-cookie-policy-privacy-policy-amsdigital-profile-services-and-one-route-per-service-detail-page-for-every-url-provided-in-the-request-e-g-services-logo-and-branding-design-services-graphic-design-services-pay-per-click",
+      "title": "Implement a multi-page site structure that mirrors the provided AMS Digital URLs, using client-side routing so each of these paths renders a dedicated page: / (Home), /about, /portfolio, /blogs, /contact, /customer-reviews, /cookie-policy, /privacy-policy, /amsdigital-profile, /services, and one route per service detail page for every URL provided in the request (e.g., /services/logo-and-branding-design, /services/graphic-design, ... /services/pay-per-click).",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-implement-seo-sherpa-like-ux-details-sticky-clear-header-behavior-strong-visual-hierarchy-reusable-section-components-and-polished-micro-interactions-hover-states-subtle-transitions-using-the-existing-react-tailwind-shadcn-ui-approach-compose-components-without-editing-any-immutable-ui-component-source-files",
-      "title": "Implement SEO Sherpa-like UX details: sticky/clear header behavior, strong visual hierarchy, reusable section components, and polished micro-interactions (hover states, subtle transitions) using the existing React + Tailwind + shadcn/ui approach (compose components without editing any immutable UI component source files).",
+      "id": "feature-refocus-the-website-narrative-so-the-home-page-and-global-messaging-primarily-highlight-client-success-make-case-studies-success-stories-the-central-content-above-or-alongside-service-promotion-and-ensure-primary-ctas-route-users-toward-viewing-case-studies-and-requesting-a-consultation",
+      "title": "Refocus the website narrative so the Home page and global messaging primarily highlight client success: make case studies/success stories the central content (above or alongside service promotion), and ensure primary CTAs route users toward viewing case studies and requesting a consultation.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-ensure-basic-quality-baselines-for-the-revamped-marketing-site-accessibility-performance-and-seo-friendly-markup",
-      "title": "Ensure basic quality baselines for the revamped marketing site: accessibility, performance, and SEO-friendly markup.",
+      "id": "feature-create-a-portfolio-case-studies-page-whose-content-is-extracted-and-adapted-from-https-www-amsdigital-in-portfolio-php-including-at-minimum-a-list-grid-of-case-studies-and-a-case-study-detail-view-either-a-dedicated-route-per-case-study-or-an-in-page-detail-pattern-featuring-problem-approach-outcome-and-supporting-visuals",
+      "title": "Create a Portfolio/Case Studies page whose content is extracted and adapted from https://www.amsdigital.in/portfolio.php, including (at minimum) a list/grid of case studies and a case-study detail view (either a dedicated route per case study or an in-page detail pattern) featuring problem/approach/outcome and supporting visuals.",
       "reqIds": [
         "REQ-3"
       ],
       "version": 1
     },
     {
-      "id": "feature-add-missing-page-section-content-so-every-existing-navigation-footer-link-target-resolves-to-real-readable-content-implement-an-about-section-with-id-about-and-legal-sections-with-ids-privacy-terms-and-cookies-privacy-policy-terms-of-service-cookie-policy-and-ensure-these-sections-are-included-in-the-rendered-layout",
-      "title": "Add missing page/section content so every existing navigation/footer link target resolves to real, readable content: implement an About section with id=\"#about\" and legal sections with ids \"#privacy\", \"#terms\", and \"#cookies\" (Privacy Policy, Terms of Service, Cookie Policy), and ensure these sections are included in the rendered layout.",
+      "id": "feature-create-a-services-landing-page-services-and-individual-service-detail-pages-for-all-provided-service-urls-each-service-detail-page-must-include-service-overview-key-deliverables-process-approach-typical-outcomes-and-a-cta-to-contact",
+      "title": "Create a Services landing page (/services) and individual service detail pages for all provided service URLs; each service detail page must include: service overview, key deliverables, process/approach, typical outcomes, and a CTA to Contact.",
       "reqIds": [
         "REQ-4"
       ],
       "version": 1
     },
     {
-      "id": "feature-rewrite-and-standardize-marketing-copy-across-all-existing-sections-hero-services-proof-metrics-testimonials-process-cta-footer-to-be-consistent-in-tone-and-branding-for-ams-digital-agency-and-ensure-all-user-facing-text-is-clear-professional-english-including-buttons-headings-descriptions-trust-indicators-stats-labels-and-helper-text",
-      "title": "Rewrite and standardize marketing copy across all existing sections (Hero, Services, Proof/Metrics, Testimonials, Process, CTA, Footer) to be consistent in tone and branding for “AMS Digital Agency”, and ensure all user-facing text is clear, professional English (including buttons, headings, descriptions, trust indicators, stats labels, and helper text).",
+      "id": "feature-create-dedicated-pages-for-about-about-blogs-blogs-contact-contact-customer-reviews-customer-reviews-and-ams-digital-profile-amsdigital-profile-with-english-user-facing-copy-adapted-from-the-corresponding-provided-ams-digital-urls",
+      "title": "Create dedicated pages for About (/about), Blogs (/blogs), Contact (/contact), Customer Reviews (/customer-reviews), and AMS Digital Profile (/amsdigital-profile), with English user-facing copy adapted from the corresponding provided AMS Digital URLs.",
       "reqIds": [
         "REQ-5"
       ],
       "version": 1
     },
     {
-      "id": "feature-update-the-ui-ux-reference-target-from-https-seosherpa-com-to-https-vercel-com-and-restyle-the-existing-ams-digital-agency-single-page-marketing-site-to-closely-match-vercel-s-visual-style-and-interaction-patterns-layout-density-typography-color-system-borders-shadows-hover-focus-states-and-overall-polish-while-keeping-all-existing-section-structure-and-ams-digital-agency-branding-content",
-      "title": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
+      "id": "feature-create-dedicated-legal-policy-pages-for-privacy-policy-and-cookie-policy-not-just-on-page-anchors-and-ensure-the-footer-links-navigate-to-these-routes",
+      "title": "Create dedicated legal/policy pages for /privacy-policy and /cookie-policy (not just on-page anchors), and ensure the footer links navigate to these routes.",
       "reqIds": [
         "REQ-6"
       ],
       "version": 1
     },
     {
-      "id": "feature-implement-vercel-like-component-level-styling-updates-across-the-marketing-ui-by-adjusting-the-design-tokens-and-section-component-compositions-e-g-global-theme-variables-container-spacing-utilities-and-section-shells-to-achieve-a-clean-high-contrast-grid-and-divider-forward-aesthetic-that-works-in-both-light-and-dark-modes",
-      "title": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
+      "id": "feature-update-the-global-header-and-footer-navigation-so-it-supports-the-new-multi-page-structure-include-links-to-home-about-services-portfolio-blogs-customer-reviews-and-contact-ensure-mobile-navigation-supports-the-same-destinations",
+      "title": "Update the global header and footer navigation so it supports the new multi-page structure: include links to Home, About, Services, Portfolio, Blogs, Customer Reviews, and Contact; ensure mobile navigation supports the same destinations.",
       "reqIds": [
         "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-centralize-all-extracted-adapted-site-content-case-studies-services-blog-posts-reviews-into-maintainable-data-modules-e-g-typed-ts-objects-and-render-pages-from-this-data-rather-than-hard-coding-large-text-blocks-inside-components",
+      "title": "Centralize all extracted/adapted site content (case studies, services, blog posts, reviews) into maintainable data modules (e.g., typed TS objects), and render pages from this data rather than hard-coding large text blocks inside components.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-distinct-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-modern-digital-agency-and-consistent-across-all-new-pages-avoid-a-blue-purple-dominant-palette",
+      "title": "Apply a cohesive, distinct visual theme (colors, typography, spacing, and component styling) suitable for a modern digital agency and consistent across all new pages; avoid a blue/purple-dominant palette.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-render-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-on-the-home-and-portfolio-pages-hero-visual-and-case-study-thumbnails",
+      "title": "Add and render the required generated images as static assets under frontend/public/assets/generated, and use them on the Home and Portfolio pages (hero visual and case-study thumbnails).",
+      "reqIds": [
+        "REQ-10"
       ],
       "version": 1
     }
@@ -70,24 +93,37 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Revamp https://www.amsdigitalagency.com/ UI/UX to closely match the style and UX patterns of https://seosherpa.com/.",
+      "summary": "Create website structure and core pages (Home, About, Portfolio, Blogs, Contact, Reviews, Profile) based on provided AMS Digital URLs",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Create/write content for all pages of the AMS Digital Agency site.",
+      "summary": "Make the site narrative revolve around client success stories and services provided, emphasizing case studies/testimonials",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-3",
-      "summary": "Update the UI/UX target reference to match https://vercel.com/ (visual style and interaction patterns).",
+      "summary": "Extract and adapt content from https://www.amsdigital.in/portfolio.php for the new website’s portfolio/case studies section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create Services landing page and individual service detail pages matching the provided services URLs list",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Include required policy/legal pages (Cookie Policy, Privacy Policy) as part of the site",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Revamp AMS Digital Agency site UI/UX to match SEO Sherpa style",
+  "gameProjectType": "none",
+  "projectName": "Create AMS Digital multi-page marketing site centered on client success stories and services (content adapted from provided AMS Digital URLs)",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

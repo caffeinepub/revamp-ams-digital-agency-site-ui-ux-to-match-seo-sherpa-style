@@ -1,66 +1,218 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-12T14:36:59.200Z",
+  "generatedAt": "2026-02-13T14:36:03.854Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 10,
+    "implemented": 10,
     "items": [
       {
-        "id": "REQ-6",
-        "summary": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
+        "id": "REQ-1",
+        "summary": "Implement a multi-page site structure that mirrors the provided AMS Digital URLs, using client-side routing so each of these paths renders a dedicated page: / (Home), /about, /portfolio, /blogs, /contact, /customer-reviews, /cookie-policy, /privacy-policy, /amsdigital-profile, /services, and one route per service detail page for every URL provided in the request (e.g., /services/logo-and-branding-design, /services/graphic-design, ... /services/pay-per-click).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/index.css",
-          "frontend/src/components/marketing/sections/SectionShell.tsx",
-          "frontend/src/components/marketing/SiteHeader.tsx",
-          "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "frontend/src/components/marketing/sections/ServicesSection.tsx",
-          "frontend/src/components/marketing/sections/ProofSection.tsx",
-          "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-          "frontend/src/components/marketing/sections/ProcessSection.tsx",
-          "frontend/src/components/marketing/sections/AboutSection.tsx",
-          "frontend/src/components/marketing/sections/CtaSection.tsx",
-          "frontend/src/components/marketing/sections/LegalSections.tsx",
-          "frontend/src/components/marketing/SiteFooter.tsx"
+          "frontend/src/App.tsx",
+          "frontend/src/routes/marketingRoutes.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/CaseStudyDetailPage.tsx",
+          "frontend/src/pages/BlogsPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/CustomerReviewsPage.tsx",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/pages/CookiePolicyPage.tsx",
+          "frontend/src/pages/AmsDigitalProfilePage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/ServiceDetailPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/src/components/marketing/sections/SectionShell.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/CaseStudyDetailPage.tsx",
+          "frontend/src/pages/BlogsPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/CustomerReviewsPage.tsx",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/pages/CookiePolicyPage.tsx",
+          "frontend/src/pages/AmsDigitalProfilePage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/ServiceDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Add and render the required generated images as static assets under frontend/public/assets/generated, and use them on the Home and Portfolio pages (hero visual and case-study thumbnails).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/ams-hero-visual.dim_1600x900.png",
+          "frontend/public/assets/generated/ams-case-thumb-set.dim_1200x800.png",
+          "frontend/public/assets/generated/ams-services-icons-sprite.dim_1024x1024.png",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/components/services/ServiceIcon.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/ams-hero-visual.dim_1600x900.png",
+          "frontend/public/assets/generated/ams-case-thumb-set.dim_1200x800.png",
+          "frontend/public/assets/generated/ams-services-icons-sprite.dim_1024x1024.png",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/PortfolioPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Refocus the website narrative so the Home page and global messaging primarily highlight client success: make case studies/success stories the central content (above or alongside service promotion), and ensure primary CTAs route users toward viewing case studies and requesting a consultation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
           "frontend/src/components/marketing/SiteHeader.tsx",
-          "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "frontend/src/components/marketing/sections/ServicesSection.tsx",
-          "frontend/src/components/marketing/sections/ProofSection.tsx",
-          "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-          "frontend/src/components/marketing/sections/ProcessSection.tsx",
-          "frontend/src/components/marketing/sections/AboutSection.tsx",
-          "frontend/src/components/marketing/sections/CtaSection.tsx",
-          "frontend/src/components/marketing/sections/LegalSections.tsx",
+          "frontend/src/content/siteCopy.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/components/marketing/SiteHeader.tsx",
+          "frontend/src/content/siteCopy.ts"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Create a Portfolio/Case Studies page whose content is extracted and adapted from https://www.amsdigital.in/portfolio.php, including (at minimum) a list/grid of case studies and a case-study detail view (either a dedicated route per case study or an in-page detail pattern) featuring problem/approach/outcome and supporting visuals.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/caseStudies.ts",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/CaseStudyDetailPage.tsx",
+          "frontend/src/components/portfolio/CaseStudyCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/caseStudies.ts",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/CaseStudyDetailPage.tsx",
+          "frontend/src/components/portfolio/CaseStudyCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Create a Services landing page (/services) and individual service detail pages for all provided service URLs; each service detail page must include: service overview, key deliverables, process/approach, typical outcomes, and a CTA to Contact.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/services.ts",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/ServiceDetailPage.tsx",
+          "frontend/src/routes/marketingRoutes.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/services.ts",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/ServiceDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Create dedicated pages for About (/about), Blogs (/blogs), Contact (/contact), Customer Reviews (/customer-reviews), and AMS Digital Profile (/amsdigital-profile), with English user-facing copy adapted from the corresponding provided AMS Digital URLs.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/reviews.ts",
+          "frontend/src/content/blogPosts.ts",
+          "frontend/src/content/companyPages.ts",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/BlogsPage.tsx",
+          "frontend/src/pages/CustomerReviewsPage.tsx",
+          "frontend/src/pages/AmsDigitalProfilePage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/reviews.ts",
+          "frontend/src/content/blogPosts.ts",
+          "frontend/src/content/companyPages.ts",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/BlogsPage.tsx",
+          "frontend/src/pages/CustomerReviewsPage.tsx",
+          "frontend/src/pages/AmsDigitalProfilePage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Create dedicated legal/policy pages for /privacy-policy and /cookie-policy (not just on-page anchors), and ensure the footer links navigate to these routes.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/legalPolicies.ts",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/pages/CookiePolicyPage.tsx",
+          "frontend/src/components/marketing/SiteFooter.tsx",
+          "frontend/src/components/marketing/sections/LegalSections.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/legalPolicies.ts",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/pages/CookiePolicyPage.tsx",
           "frontend/src/components/marketing/SiteFooter.tsx"
         ]
       },
       {
         "id": "REQ-7",
-        "summary": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
+        "summary": "Update the global header and footer navigation so it supports the new multi-page structure: include links to Home, About, Services, Portfolio, Blogs, Customer Reviews, and Contact; ensure mobile navigation supports the same destinations.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/tailwind.config.js",
-          "frontend/src/index.css",
-          "frontend/src/components/marketing/sections/SectionShell.tsx",
           "frontend/src/components/marketing/SiteHeader.tsx",
-          "frontend/src/components/marketing/sections/HeroSection.tsx"
+          "frontend/src/components/marketing/SiteFooter.tsx",
+          "frontend/src/App.tsx"
         ],
         "matchedFiles": [
-          "frontend/tailwind.config.js",
-          "frontend/src/index.css",
-          "frontend/src/components/marketing/sections/SectionShell.tsx",
           "frontend/src/components/marketing/SiteHeader.tsx",
-          "frontend/src/components/marketing/sections/HeroSection.tsx"
+          "frontend/src/components/marketing/SiteFooter.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Centralize all extracted/adapted site content (case studies, services, blog posts, reviews) into maintainable data modules (e.g., typed TS objects), and render pages from this data rather than hard-coding large text blocks inside components.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/types.ts",
+          "frontend/src/content/caseStudies.ts",
+          "frontend/src/content/services.ts",
+          "frontend/src/content/blogPosts.ts",
+          "frontend/src/content/reviews.ts",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/BlogsPage.tsx",
+          "frontend/src/pages/CustomerReviewsPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/types.ts",
+          "frontend/src/content/caseStudies.ts",
+          "frontend/src/content/services.ts",
+          "frontend/src/content/blogPosts.ts",
+          "frontend/src/content/reviews.ts",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/BlogsPage.tsx",
+          "frontend/src/pages/CustomerReviewsPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Apply a cohesive, distinct visual theme (colors, typography, spacing, and component styling) suitable for a modern digital agency and consistent across all new pages; avoid a blue/purple-dominant palette.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/layout/PageShell.tsx",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/CaseStudyDetailPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/layout/PageShell.tsx",
+          "frontend/src/pages/PortfolioPage.tsx",
+          "frontend/src/pages/CaseStudyDetailPage.tsx"
         ]
       }
     ]
@@ -70,19 +222,34 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/ams-case-thumb-set.dim_1200x800.png",
+    "frontend/public/assets/generated/ams-hero-visual.dim_1600x900.png",
+    "frontend/public/assets/generated/ams-services-icons-sprite.dim_1024x1024.png",
+    "frontend/src/App.tsx",
+    "frontend/src/components/layout/PageShell.tsx",
     "frontend/src/components/marketing/SiteFooter.tsx",
     "frontend/src/components/marketing/SiteHeader.tsx",
-    "frontend/src/components/marketing/sections/AboutSection.tsx",
-    "frontend/src/components/marketing/sections/CtaSection.tsx",
-    "frontend/src/components/marketing/sections/HeroSection.tsx",
-    "frontend/src/components/marketing/sections/LegalSections.tsx",
-    "frontend/src/components/marketing/sections/ProcessSection.tsx",
-    "frontend/src/components/marketing/sections/ProofSection.tsx",
-    "frontend/src/components/marketing/sections/SectionShell.tsx",
-    "frontend/src/components/marketing/sections/ServicesSection.tsx",
-    "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-    "frontend/src/index.css",
-    "frontend/tailwind.config.js",
+    "frontend/src/components/portfolio/CaseStudyCard.tsx",
+    "frontend/src/content/blogPosts.ts",
+    "frontend/src/content/caseStudies.ts",
+    "frontend/src/content/companyPages.ts",
+    "frontend/src/content/legalPolicies.ts",
+    "frontend/src/content/reviews.ts",
+    "frontend/src/content/services.ts",
+    "frontend/src/content/siteCopy.ts",
+    "frontend/src/content/types.ts",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/AmsDigitalProfilePage.tsx",
+    "frontend/src/pages/BlogsPage.tsx",
+    "frontend/src/pages/CaseStudyDetailPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/CookiePolicyPage.tsx",
+    "frontend/src/pages/CustomerReviewsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PortfolioPage.tsx",
+    "frontend/src/pages/PrivacyPolicyPage.tsx",
+    "frontend/src/pages/ServiceDetailPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

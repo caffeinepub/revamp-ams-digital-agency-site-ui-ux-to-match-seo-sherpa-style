@@ -31,18 +31,18 @@ export function ProofSection() {
 
   return (
     <SectionShell variant="default" className="section-padding-sm border-b">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
         {metrics.map((metric, index) => (
-          <div key={metric.label} className={`text-center space-y-2 ${index < metrics.length - 1 ? 'lg:border-r' : ''}`}>
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-md border bg-accent/50 mb-2">
-              <metric.icon className="w-6 h-6" />
+          <div key={metric.label} className={`text-center space-y-4 ${index < metrics.length - 1 ? 'lg:border-r-2' : ''}`}>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-lg border-2 bg-muted/50 mb-3">
+              <metric.icon className="w-8 h-8" />
             </div>
-            <div className="text-4xl lg:text-5xl font-bold tracking-tight">
+            <div className="text-5xl lg:text-6xl font-bold tracking-tight">
               {metric.value}
             </div>
             <div>
-              <div className="font-medium text-sm">{metric.label}</div>
-              <div className="text-xs text-muted-foreground">{metric.description}</div>
+              <div className="font-bold text-base mb-1">{metric.label}</div>
+              <div className="text-sm text-muted-foreground">{metric.description}</div>
             </div>
           </div>
         ))}

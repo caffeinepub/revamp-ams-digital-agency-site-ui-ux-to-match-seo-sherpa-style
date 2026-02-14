@@ -1,59 +1,215 @@
 {
   "kind": "build_request",
-  "title": "Update marketing site UI/UX to match Vercel.com visual style",
+  "title": "Create AMS Digital multi-page marketing site centered on client success stories and services (content adapted from provided AMS Digital URLs)",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-6",
-      "text": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
+      "id": "REQ-1",
+      "text": "Implement a multi-page site structure that mirrors the provided AMS Digital URLs, using client-side routing so each of these paths renders a dedicated page: / (Home), /about, /portfolio, /blogs, /contact, /customer-reviews, /cookie-policy, /privacy-policy, /amsdigital-profile, /services, and one route per service detail page for every URL provided in the request (e.g., /services/logo-and-branding-design, /services/graphic-design, ... /services/pay-per-click).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-1"
         ],
         "quotes": [
-          "use ui like https://vercel.com/"
+          "CREATE - https://www.amsdigital.in/\nhttps://www.amsdigital.in/about.php\nhttps://www.amsdigital.in/portfolio.php\nhttps://www.amsdigital.in/blogs.php\nhttps://www.amsdigital.in/contact_ams.php\nhttps://www.amsdigital.in/customer-reviews.php\nhttps://www.amsdigital.in/cookie-policy.php\nhttps://www.amsdigital.in/privacy-policy.php\nhttps://www.amsdigital.in/amsdigital-profile.php\nhttps://www.amsdigital.in/services.php\nhttps://www.amsdigital.in/services/logo-and-branding-design.php\n..."
         ]
       },
       "acceptanceCriteria": [
-        "The site’s overall look and feel is recognizably Vercel-inspired: neutral/monochrome palette, crisp borders/dividers, subtle elevation, and restrained accent usage (no bright gradient-forward brand styling as the primary motif).",
-        "No new product features or new pages are introduced; only styling/UX is changed across existing sections (Header, Hero, Services, Proof, Testimonials, Process, About, CTA, Legal, Footer).",
-        "All existing navigation/footer anchor links (#services, #process, #testimonials, #about, #contact, #privacy, #terms, #cookies) continue to work and scroll smoothly.",
-        "All user-facing text remains professional English and retains AMS Digital Agency meaning (do not replace with Vercel product copy)."
+        "Navigating directly to each route (browser refresh) renders the correct page without a blank screen",
+        "Header and footer appear consistently across all pages",
+        "Service detail routes exist for every service URL in the user’s list and do not 404"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Refocus the website narrative so the Home page and global messaging primarily highlight client success: make case studies/success stories the central content (above or alongside service promotion), and ensure primary CTAs route users toward viewing case studies and requesting a consultation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "website should revolve around client sucess."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page hero and at least one additional section explicitly emphasize outcomes/results for clients (not just capabilities)",
+        "Primary CTA(s) include a path to Portfolio/Case Studies and a path to Contact/Consultation",
+        "Services are presented as supporting the success stories rather than being the sole focus"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a Portfolio/Case Studies page whose content is extracted and adapted from https://www.amsdigital.in/portfolio.php, including (at minimum) a list/grid of case studies and a case-study detail view (either a dedicated route per case study or an in-page detail pattern) featuring problem/approach/outcome and supporting visuals.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "extract content from https://www.amsdigital.in/portfolio.php.."
+        ]
+      },
+      "acceptanceCriteria": [
+        "/portfolio displays multiple case studies derived from the referenced portfolio source (adapted into English as needed)",
+        "Each case study can be opened to a detail view that includes a clear outcome/results section",
+        "Case studies include at least one visual per item (thumbnail and/or header image) loaded from static assets"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a Services landing page (/services) and individual service detail pages for all provided service URLs; each service detail page must include: service overview, key deliverables, process/approach, typical outcomes, and a CTA to Contact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "https://www.amsdigital.in/services.php\nhttps://www.amsdigital.in/services/logo-and-branding-design.php\nhttps://www.amsdigital.in/services/graphic-design.php\nhttps://www.amsdigital.in/services/website-design.php\nhttps://www.amsdigital.in/services/mobile-app-design.php\nhttps://www.amsdigital.in/services/website-development.php\nhttps://www.amsdigital.in/services/ecommerce-development.php\nhttps://www.amsdigital.in/services/search-engine-optimization.php\nhttps://www.amsdigital.in/services/content-marketing.php\nhttps://www.amsdigital.in/services/lead-generation.php\nhttps://www.amsdigital.in/services/online-reputation-management.php\nhttps://www.amsdigital.in/services/quora-marketing.php\nhttps://www.amsdigital.in/services/facebook-marketing.php\nhttps://www.amsdigital.in/services/instagram-marketing.php\nhttps://www.amsdigital.in/services/linkedin-marketing.php\nhttps://www.amsdigital.in/services/twitter-marketing.php\nhttps://www.amsdigital.in/services/video-marketing.php\nhttps://www.amsdigital.in/services/medium-marketing.php\nhttps://www.amsdigital.in/services/google-adword.php\nhttps://www.amsdigital.in/services/display-marketing.php\nhttps://www.amsdigital.in/services/facebook-advertising.php\nhttps://www.amsdigital.in/services/instagram-advertising.php\nhttps://www.amsdigital.in/services/linkedin-advertising.php\nhttps://www.amsdigital.in/services/twitter-advertising.php\nhttps://www.amsdigital.in/services/youtube-advertising.php\nhttps://www.amsdigital.in/services/pay-per-click.php"
+        ]
+      },
+      "acceptanceCriteria": [
+        "/services lists all services and links to every service detail page",
+        "Each service detail page includes an outcomes/results section and a prominent Contact CTA",
+        "No service URL from the user’s list is missing from the site navigation paths"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create dedicated pages for About (/about), Blogs (/blogs), Contact (/contact), Customer Reviews (/customer-reviews), and AMS Digital Profile (/amsdigital-profile), with English user-facing copy adapted from the corresponding provided AMS Digital URLs.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "https://www.amsdigital.in/about.php\nhttps://www.amsdigital.in/blogs.php\nhttps://www.amsdigital.in/contact_ams.php\nhttps://www.amsdigital.in/customer-reviews.php\nhttps://www.amsdigital.in/amsdigital-profile.php"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each of the listed routes renders a complete page (not placeholder-only) with coherent English content",
+        "Customer Reviews page contains multiple review/testimonial entries and highlights client outcomes where possible",
+        "Contact page includes a functional contact form UI and clear contact details/CTA (submission can be non-emailing if no email integration exists)"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create dedicated legal/policy pages for /privacy-policy and /cookie-policy (not just on-page anchors), and ensure the footer links navigate to these routes.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "https://www.amsdigital.in/cookie-policy.php\nhttps://www.amsdigital.in/privacy-policy.php"
+        ]
+      },
+      "acceptanceCriteria": [
+        "/privacy-policy renders privacy policy content in a readable legal layout",
+        "/cookie-policy renders cookie policy content in a readable legal layout",
+        "Footer legal links navigate to these routes (not #privacy/#cookies anchors)"
       ]
     },
     {
       "id": "REQ-7",
-      "text": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
+      "text": "Update the global header and footer navigation so it supports the new multi-page structure: include links to Home, About, Services, Portfolio, Blogs, Customer Reviews, and Contact; ensure mobile navigation supports the same destinations.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-1"
         ],
         "quotes": [
-          "use ui like https://vercel.com/"
+          "CREATE - https://www.amsdigital.in/ ... (multiple pages)"
         ]
       },
       "acceptanceCriteria": [
-        "Global theme variables and base styles (e.g., in frontend/src/index.css) are updated to a Vercel-like neutral palette with clear semantic contrast for text, borders, and surfaces.",
-        "Header, buttons, badges, cards, and section wrappers exhibit consistent Vercel-like styling: minimal rounding, subtle shadows (or none), thin borders, and refined hover/focus states.",
-        "The Hero section’s visual treatment is updated away from colorful gradients toward a Vercel-like restrained treatment (e.g., subtle grid/background texture and clean panels) while keeping existing content and CTAs.",
-        "No edits are made to any immutable UI component source files under frontend/src/components/ui or other listed immutablePaths; changes are achieved via composition and styling in editable files."
+        "Header nav links route to the correct pages (and do not rely on single-page section scrolling for primary navigation)",
+        "Mobile menu includes the same primary destinations as desktop",
+        "Footer link groups include working links for Services, Company, and Legal pages"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Centralize all extracted/adapted site content (case studies, services, blog posts, reviews) into maintainable data modules (e.g., typed TS objects), and render pages from this data rather than hard-coding large text blocks inside components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "included client success story and services provided."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Portfolio, Services, Blogs, and Reviews pages are driven primarily by shared data structures",
+        "Content is easy to update without editing multiple components",
+        "TypeScript types exist for core content entities (case study, service, blog post, review)"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Apply a cohesive, distinct visual theme (colors, typography, spacing, and component styling) suitable for a modern digital agency and consistent across all new pages; avoid a blue/purple-dominant palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "website should revolve around client sucess."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share a consistent design system (headings, body text, cards, buttons, sections)",
+        "The chosen palette is not primarily blue/purple",
+        "Portfolio/case study pages look visually premium and emphasize readability and outcomes"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add and render the required generated images as static assets under frontend/public/assets/generated, and use them on the Home and Portfolio pages (hero visual and case-study thumbnails).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "extract content from https://www.amsdigital.in/portfolio.php.."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated with the specified filenames",
+        "Home and Portfolio pages load these images directly from static assets (not via backend)",
+        "Case study listings display a consistent thumbnail treatment across breakpoints"
       ]
     }
   ],
   "constraints": [
-    "Do not edit any files under the frontend immutable paths (including frontend/src/components/ui and the Internet Identity/actor hooks listed as immutable).",
-    "Keep the backend as a single Motoko actor; no backend changes are required for this UI refresh.",
-    "Do not introduce unrelated product features; this request is a visual/UX restyle to match https://vercel.com/."
+    "Do not edit files in frontend immutablePaths (including frontend/src/main.tsx and frontend/src/hooks/useInternetIdentity.ts[x]). Compose new components/pages around them.",
+    "Backend must remain a single Motoko actor (backend/main.mo). Add backend features only if strictly necessary for the requested pages/content.",
+    "Use English for all user-facing text."
   ],
   "nonGoals": [
-    "Adding a blog, CMS, or new site sections not already present in App.tsx.",
-    "Adding authentication changes, backend methods, or persistence (backend/main.mo can remain empty).",
-    "Integrating third-party services or APIs."
+    "Implementing third-party authentication beyond Internet Identity",
+    "Adding a CMS, external database, or third-party blog platform integration",
+    "Implementing real-time chat, push notifications, or email sending integrations"
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Modern agency hero illustration with abstract shapes and subtle success/metrics motifs (ams-hero-visual.dim_1600x900.png)",
+      "Set of 6–9 case study thumbnail images in a consistent style (ams-case-thumb-set.dim_1200x800.png)",
+      "Minimal icon set for services in a consistent outline style (ams-services-icons-sprite.dim_1024x1024.png)"
+    ],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

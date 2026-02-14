@@ -2,21 +2,129 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-ui-ux-reference-target-from-https-seosherpa-com-to-https-vercel-com-and-restyle-the-existing-ams-digital-agency-single-page-marketing-site-to-closely-match-vercel-s-visual-style-and-interaction-patterns-layout-density-typography-color-system-borders-shadows-hover-focus-states-and-overall-polish-while-keeping-all-existing-section-structure-and-ams-digital-agency-branding-content",
-      "featureTitle": "Update the UI/UX reference target from https://seosherpa.com/ to https://vercel.com/ and restyle the existing AMS Digital Agency single-page marketing site to closely match Vercel’s visual style and interaction patterns (layout density, typography, color system, borders, shadows, hover/focus states, and overall polish) while keeping all existing section structure and AMS Digital Agency branding/content.",
+      "featureId": "feature-implement-a-multi-page-site-structure-that-mirrors-the-provided-ams-digital-urls-using-client-side-routing-so-each-of-these-paths-renders-a-dedicated-page-home-about-portfolio-blogs-contact-customer-reviews-cookie-policy-privacy-policy-amsdigital-profile-services-and-one-route-per-service-detail-page-for-every-url-provided-in-the-request-e-g-services-logo-and-branding-design-services-graphic-design-services-pay-per-click",
+      "featureTitle": "Implement a multi-page site structure that mirrors the provided AMS Digital URLs, using client-side routing so each of these paths renders a dedicated page: / (Home), /about, /portfolio, /blogs, /contact, /customer-reviews, /cookie-policy, /privacy-policy, /amsdigital-profile, /services, and one route per service detail page for every URL provided in the request (e.g., /services/logo-and-branding-design, /services/graphic-design, ... /services/pay-per-click).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/AmsDigitalProfilePage.tsx",
+        "frontend/src/pages/BlogsPage.tsx",
+        "frontend/src/pages/CaseStudyDetailPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/CookiePolicyPage.tsx",
+        "frontend/src/pages/CustomerReviewsPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PortfolioPage.tsx",
+        "frontend/src/pages/PrivacyPolicyPage.tsx",
+        "frontend/src/pages/ServiceDetailPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-refocus-the-website-narrative-so-the-home-page-and-global-messaging-primarily-highlight-client-success-make-case-studies-success-stories-the-central-content-above-or-alongside-service-promotion-and-ensure-primary-ctas-route-users-toward-viewing-case-studies-and-requesting-a-consultation",
+      "featureTitle": "Refocus the website narrative so the Home page and global messaging primarily highlight client success: make case studies/success stories the central content (above or alongside service promotion), and ensure primary CTAs route users toward viewing case studies and requesting a consultation.",
+      "files": [
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/content/siteCopy.ts",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-portfolio-case-studies-page-whose-content-is-extracted-and-adapted-from-https-www-amsdigital-in-portfolio-php-including-at-minimum-a-list-grid-of-case-studies-and-a-case-study-detail-view-either-a-dedicated-route-per-case-study-or-an-in-page-detail-pattern-featuring-problem-approach-outcome-and-supporting-visuals",
+      "featureTitle": "Create a Portfolio/Case Studies page whose content is extracted and adapted from https://www.amsdigital.in/portfolio.php, including (at minimum) a list/grid of case studies and a case-study detail view (either a dedicated route per case study or an in-page detail pattern) featuring problem/approach/outcome and supporting visuals.",
+      "files": [
+        "frontend/src/components/portfolio/CaseStudyCard.tsx",
+        "frontend/src/content/caseStudies.ts",
+        "frontend/src/pages/CaseStudyDetailPage.tsx",
+        "frontend/src/pages/PortfolioPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-services-landing-page-services-and-individual-service-detail-pages-for-all-provided-service-urls-each-service-detail-page-must-include-service-overview-key-deliverables-process-approach-typical-outcomes-and-a-cta-to-contact",
+      "featureTitle": "Create a Services landing page (/services) and individual service detail pages for all provided service URLs; each service detail page must include: service overview, key deliverables, process/approach, typical outcomes, and a CTA to Contact.",
+      "files": [
+        "frontend/src/content/services.ts",
+        "frontend/src/pages/ServiceDetailPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-dedicated-pages-for-about-about-blogs-blogs-contact-contact-customer-reviews-customer-reviews-and-ams-digital-profile-amsdigital-profile-with-english-user-facing-copy-adapted-from-the-corresponding-provided-ams-digital-urls",
+      "featureTitle": "Create dedicated pages for About (/about), Blogs (/blogs), Contact (/contact), Customer Reviews (/customer-reviews), and AMS Digital Profile (/amsdigital-profile), with English user-facing copy adapted from the corresponding provided AMS Digital URLs.",
+      "files": [
+        "frontend/src/content/blogPosts.ts",
+        "frontend/src/content/companyPages.ts",
+        "frontend/src/content/reviews.ts",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/AmsDigitalProfilePage.tsx",
+        "frontend/src/pages/BlogsPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/CustomerReviewsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-dedicated-legal-policy-pages-for-privacy-policy-and-cookie-policy-not-just-on-page-anchors-and-ensure-the-footer-links-navigate-to-these-routes",
+      "featureTitle": "Create dedicated legal/policy pages for /privacy-policy and /cookie-policy (not just on-page anchors), and ensure the footer links navigate to these routes.",
       "files": [
         "frontend/src/components/marketing/SiteFooter.tsx",
-        "frontend/src/components/marketing/SiteHeader.tsx",
-        "frontend/src/components/marketing/sections/AboutSection.tsx",
-        "frontend/src/components/marketing/sections/CtaSection.tsx",
-        "frontend/src/components/marketing/sections/HeroSection.tsx",
-        "frontend/src/components/marketing/sections/LegalSections.tsx",
-        "frontend/src/components/marketing/sections/ProcessSection.tsx",
-        "frontend/src/components/marketing/sections/ProofSection.tsx",
-        "frontend/src/components/marketing/sections/SectionShell.tsx",
-        "frontend/src/components/marketing/sections/ServicesSection.tsx",
-        "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-        "frontend/src/index.css"
+        "frontend/src/content/legalPolicies.ts",
+        "frontend/src/pages/CookiePolicyPage.tsx",
+        "frontend/src/pages/PrivacyPolicyPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -31,14 +139,12 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-vercel-like-component-level-styling-updates-across-the-marketing-ui-by-adjusting-the-design-tokens-and-section-component-compositions-e-g-global-theme-variables-container-spacing-utilities-and-section-shells-to-achieve-a-clean-high-contrast-grid-and-divider-forward-aesthetic-that-works-in-both-light-and-dark-modes",
-      "featureTitle": "Implement Vercel-like component-level styling updates across the marketing UI by adjusting the design tokens and section/component compositions (e.g., global theme variables, container/spacing utilities, and section shells) to achieve a clean, high-contrast, grid-and-divider-forward aesthetic that works in both light and dark modes.",
+      "featureId": "feature-update-the-global-header-and-footer-navigation-so-it-supports-the-new-multi-page-structure-include-links-to-home-about-services-portfolio-blogs-customer-reviews-and-contact-ensure-mobile-navigation-supports-the-same-destinations",
+      "featureTitle": "Update the global header and footer navigation so it supports the new multi-page structure: include links to Home, About, Services, Portfolio, Blogs, Customer Reviews, and Contact; ensure mobile navigation supports the same destinations.",
       "files": [
-        "frontend/src/components/marketing/SiteHeader.tsx",
-        "frontend/src/components/marketing/sections/HeroSection.tsx",
-        "frontend/src/components/marketing/sections/SectionShell.tsx",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/SiteFooter.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -49,6 +155,71 @@
       ],
       "testIds": [
         "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-centralize-all-extracted-adapted-site-content-case-studies-services-blog-posts-reviews-into-maintainable-data-modules-e-g-typed-ts-objects-and-render-pages-from-this-data-rather-than-hard-coding-large-text-blocks-inside-components",
+      "featureTitle": "Centralize all extracted/adapted site content (case studies, services, blog posts, reviews) into maintainable data modules (e.g., typed TS objects), and render pages from this data rather than hard-coding large text blocks inside components.",
+      "files": [
+        "frontend/src/content/blogPosts.ts",
+        "frontend/src/content/caseStudies.ts",
+        "frontend/src/content/reviews.ts",
+        "frontend/src/content/services.ts",
+        "frontend/src/content/types.ts",
+        "frontend/src/pages/BlogsPage.tsx",
+        "frontend/src/pages/CustomerReviewsPage.tsx",
+        "frontend/src/pages/PortfolioPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-distinct-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-modern-digital-agency-and-consistent-across-all-new-pages-avoid-a-blue-purple-dominant-palette",
+      "featureTitle": "Apply a cohesive, distinct visual theme (colors, typography, spacing, and component styling) suitable for a modern digital agency and consistent across all new pages; avoid a blue/purple-dominant palette.",
+      "files": [
+        "frontend/src/components/layout/PageShell.tsx",
+        "frontend/src/pages/CaseStudyDetailPage.tsx",
+        "frontend/src/pages/PortfolioPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-and-render-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-on-the-home-and-portfolio-pages-hero-visual-and-case-study-thumbnails",
+      "featureTitle": "Add and render the required generated images as static assets under frontend/public/assets/generated, and use them on the Home and Portfolio pages (hero visual and case-study thumbnails).",
+      "files": [
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PortfolioPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
       ],
       "confidence": "high"
     }

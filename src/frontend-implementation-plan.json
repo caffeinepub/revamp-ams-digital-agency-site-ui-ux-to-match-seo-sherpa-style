@@ -1,119 +1,415 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Vercel-inspired restyle of AMS Digital Agency single-page marketing site (light/dark)",
+  "title": "AMS Digital multi-page marketing site with success-story led narrative",
   "requirements": [
     {
-      "id": "REQ-6",
-      "summary": "Restyle the existing marketing single-page UI to be recognizably Vercel-inspired while keeping all existing sections, branding/content, and working anchor navigation.",
+      "id": "REQ-1",
+      "summary": "Add client-side routing and dedicated pages for all specified AMS Digital paths, including one route per service detail URL.",
       "acceptanceCriteria": [
-        "The site’s overall look and feel is recognizably Vercel-inspired: neutral/monochrome palette, crisp borders/dividers, subtle elevation, and restrained accent usage (no bright gradient-forward brand styling as the primary motif).",
-        "No new product features or new pages are introduced; only styling/UX is changed across existing sections (Header, Hero, Services, Proof, Testimonials, Process, About, CTA, Legal, Footer).",
-        "All existing navigation/footer anchor links (#services, #process, #testimonials, #about, #contact, #privacy, #terms, #cookies) continue to work and scroll smoothly.",
-        "All user-facing text remains professional English and retains AMS Digital Agency meaning (do not replace with Vercel product copy)."
+        "Navigating directly to each route (browser refresh) renders the correct page without a blank screen",
+        "Header and footer appear consistently across all pages",
+        "Service detail routes exist for every service URL in the user’s list and do not 404"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Update global base styles to a Vercel-like visual baseline: monochrome surfaces, crisp borders/dividers, restrained accent color, refined focus rings, and smooth-scrolling behavior for all in-page anchors. Ensure changes are purely styling/UX and keep all existing content/section structure. Use shadcn-ui tokens as the source of truth for component styling consistency; verify the component's usage instructions before implementing."
+          "description": "Replace the current single-page section composition with a routed app shell that renders a dedicated page for each required path and keeps SiteHeader/SiteFooter consistent across routes."
         },
         {
-          "path": "frontend/index.css",
-          "operation": "modify",
-          "description": "Align any duplicate/global Tailwind token definitions with the Vercel-like neutral palette so the marketing pages render consistently in light/dark modes across environments. Keep this limited to styling; do not introduce new pages/features. Verify the component's usage instructions before implementing."
+          "path": "frontend/src/routes/marketingRoutes.tsx",
+          "operation": "create",
+          "description": "Define and export the route configuration for /, /about, /portfolio (+ case study detail), /blogs, /contact, /customer-reviews, /cookie-policy, /privacy-policy, /amsdigital-profile, /services, plus explicit /services/<slug> routes for every provided service URL."
         },
         {
-          "path": "frontend/src/components/marketing/sections/SectionShell.tsx",
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the Home page component rendered at /, structured for success-story-first marketing content and using shared content data modules (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create the /about page using English-adapted copy sourced from the referenced AMS Digital About URL."
+        },
+        {
+          "path": "frontend/src/pages/PortfolioPage.tsx",
+          "operation": "create",
+          "description": "Create the /portfolio page to list case studies from centralized data and link into a case study detail view (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/CaseStudyDetailPage.tsx",
+          "operation": "create",
+          "description": "Create the case study detail view (e.g., /portfolio/:slug) used to display problem/approach/outcome and visuals for each case study."
+        },
+        {
+          "path": "frontend/src/pages/BlogsPage.tsx",
+          "operation": "create",
+          "description": "Create the /blogs page using English-adapted blog listing content sourced from the referenced AMS Digital Blogs URL."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "create",
+          "description": "Create the /contact page with a functional contact form UI (client-side submission behavior only) and clear contact details/consultation CTA (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/CustomerReviewsPage.tsx",
+          "operation": "create",
+          "description": "Create the /customer-reviews page to render multiple testimonial entries from centralized data and emphasize outcomes."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "operation": "create",
+          "description": "Create the /privacy-policy page as a dedicated readable legal layout driven by centralized policy content data."
+        },
+        {
+          "path": "frontend/src/pages/CookiePolicyPage.tsx",
+          "operation": "create",
+          "description": "Create the /cookie-policy page as a dedicated readable legal layout driven by centralized policy content data."
+        },
+        {
+          "path": "frontend/src/pages/AmsDigitalProfilePage.tsx",
+          "operation": "create",
+          "description": "Create the /amsdigital-profile page using English-adapted copy sourced from the referenced AMS Digital profile URL."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "create",
+          "description": "Create the /services landing page that lists and links to every service detail page, driven by centralized services data (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/ServiceDetailPage.tsx",
+          "operation": "create",
+          "description": "Create the service detail page renderer used by explicit /services/<slug> routes; reads the requested service by slug and displays the required sections plus a Contact CTA."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Refocus the Home page and global messaging to prioritize client outcomes and route primary CTAs to case studies and consultation.",
+      "acceptanceCriteria": [
+        "Home page hero and at least one additional section explicitly emphasize outcomes/results for clients (not just capabilities)",
+        "Primary CTA(s) include a path to Portfolio/Case Studies and a path to Contact/Consultation",
+        "Services are presented as supporting the success stories rather than being the sole focus"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Adjust section wrapper styling to be divider/grid-forward and navigation-friendly: add consistent scroll margin for sticky header offset, unify section background treatments to neutral panels, and support subtle top/bottom dividers between sections without changing section order or IDs. Verify the component's usage instructions before implementing."
+          "description": "Update Home hero and key sections so success stories/outcomes lead the narrative; ensure primary CTA buttons navigate to /portfolio and /contact (Verify the component's usage instructions before implementing)."
         },
         {
           "path": "frontend/src/components/marketing/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Restyle header to a Vercel-like sticky topbar: minimal rounding, thin border, subtle backdrop blur, refined hover/focus states, and remove gradient-forward logo treatments in favor of crisp monochrome/neutral branding. Preserve existing nav items and smooth scrolling behavior for #services/#process/#testimonials/#about/#contact. Uses shadcn-ui Button/Sheet; verify the component's usage instructions before implementing."
+          "description": "Update header messaging/CTAs so the primary actions route to /portfolio (case studies) and /contact (consultation) instead of only in-page scrolling (Verify the component's usage instructions before implementing)."
         },
         {
-          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Update Hero visuals away from colorful gradients toward a restrained Vercel-like treatment: subtle grid/texture background, clean panels, high-contrast typography, and minimal accent usage while keeping the existing hero copy and CTAs. Uses shadcn-ui Button/Badge; verify the component's usage instructions before implementing."
+          "path": "frontend/src/content/siteCopy.ts",
+          "operation": "create",
+          "description": "Centralize global success-story-led messaging (taglines, CTA labels, proof points) so Home and nav CTAs can be updated without editing multiple components."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement a Portfolio/Case Studies experience derived from the provided AMS Digital portfolio source, including list/grid and detail views with visuals and outcomes.",
+      "acceptanceCriteria": [
+        "/portfolio displays multiple case studies derived from the referenced portfolio source (adapted into English as needed)",
+        "Each case study can be opened to a detail view that includes a clear outcome/results section",
+        "Case studies include at least one visual per item (thumbnail and/or header image) loaded from static assets"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/caseStudies.ts",
+          "operation": "create",
+          "description": "Create maintainable case study data adapted from https://www.amsdigital.in/portfolio.php, including slug, title, industry/client summary, problem/approach/outcome, and references to static thumbnail/hero assets."
         },
         {
-          "path": "frontend/src/components/marketing/sections/ServicesSection.tsx",
+          "path": "frontend/src/pages/PortfolioPage.tsx",
           "operation": "modify",
-          "description": "Restyle Services cards/icons to match Vercel-like density and polish: neutral surfaces, thin borders, minimal rounding, subtle hover states, and consistent typography. Keep the same services content and #services anchor. Uses shadcn-ui Card/Button; verify the component's usage instructions before implementing."
+          "description": "Render a case study grid/list from centralized caseStudies data, including consistent thumbnail treatment and links to each detail view (Verify the component's usage instructions before implementing)."
         },
         {
-          "path": "frontend/src/components/marketing/sections/ProofSection.tsx",
+          "path": "frontend/src/pages/CaseStudyDetailPage.tsx",
           "operation": "modify",
-          "description": "Restyle Proof metrics to Vercel-like minimalist stat blocks: remove gradient text/icon backgrounds, introduce divider/grid-aligned layout, and ensure high contrast in both themes. Preserve metric content and section placement. Verify the component's usage instructions before implementing."
+          "description": "Render case study details (problem/approach/outcome) and supporting visuals loaded from static assets; emphasize outcomes and readability."
         },
         {
-          "path": "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-          "operation": "modify",
-          "description": "Restyle Testimonials cards to a Vercel-like clean card system: thin borders, subtle elevation (or none), refined spacing, and muted secondary text. Keep the same testimonials and #testimonials anchor. Uses shadcn-ui Card/Avatar; verify the component's usage instructions before implementing."
+          "path": "frontend/src/components/portfolio/CaseStudyCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable case study card component for consistent grid presentation across breakpoints (Verify the component's usage instructions before implementing)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create a Services landing page and individual service detail pages for all provided service URLs, each with required sections and Contact CTA.",
+      "acceptanceCriteria": [
+        "/services lists all services and links to every service detail page",
+        "Each service detail page includes an outcomes/results section and a prominent Contact CTA",
+        "No service URL from the user’s list is missing from the site navigation paths"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/services.ts",
+          "operation": "create",
+          "description": "Create centralized services data for every provided service URL (slug aligned to the URL path) including overview, deliverables, process/approach, typical outcomes, and CTA metadata."
         },
         {
-          "path": "frontend/src/components/marketing/sections/ProcessSection.tsx",
+          "path": "frontend/src/pages/ServicesPage.tsx",
           "operation": "modify",
-          "description": "Restyle Process step cards to the same Vercel-like system (panels + dividers, minimal rounding, subtle hover/focus) and reduce decorative gradient-heavy elements while preserving all step text and #process anchor. Uses shadcn-ui Card; verify the component's usage instructions before implementing."
+          "description": "Render the full services list/grid driven by services data and link to each explicit /services/<slug> detail route (Verify the component's usage instructions before implementing)."
         },
         {
-          "path": "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "path": "frontend/src/pages/ServiceDetailPage.tsx",
           "operation": "modify",
-          "description": "Restyle About section and value cards to a neutral, crisp, Vercel-like presentation (monochrome panels, thin borders, consistent icon treatment) while keeping all text intact and #about anchor unchanged. Uses shadcn-ui Card; verify the component's usage instructions before implementing."
+          "description": "Render a service detail page that includes overview, key deliverables, process/approach, typical outcomes, and a prominent CTA that routes to /contact."
         },
         {
-          "path": "frontend/src/components/marketing/sections/CtaSection.tsx",
+          "path": "frontend/src/routes/marketingRoutes.tsx",
           "operation": "modify",
-          "description": "Restyle CTA section away from bold gradients toward a Vercel-like high-contrast panel (e.g., clean dark panel in dark mode / subtle panel in light mode), with refined input/button styling and consistent focus rings. Keep existing CTA copy/form behavior and #contact anchor. Uses shadcn-ui Button/Input; verify the component's usage instructions before implementing."
+          "description": "Ensure there is a distinct route entry for each service slug from the provided URL list (not missing any), wiring each path to ServiceDetailPage."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create dedicated About, Blogs, Contact, Customer Reviews, and AMS Digital Profile pages with English copy adapted from the provided URLs.",
+      "acceptanceCriteria": [
+        "Each of the listed routes renders a complete page (not placeholder-only) with coherent English content",
+        "Customer Reviews page contains multiple review/testimonial entries and highlights client outcomes where possible",
+        "Contact page includes a functional contact form UI and clear contact details/CTA (submission can be non-emailing if no email integration exists)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/reviews.ts",
+          "operation": "create",
+          "description": "Centralize testimonials/reviews adapted from https://www.amsdigital.in/customer-reviews.php, including outcome-oriented highlights."
         },
         {
-          "path": "frontend/src/components/marketing/sections/LegalSections.tsx",
+          "path": "frontend/src/content/blogPosts.ts",
+          "operation": "create",
+          "description": "Centralize blog listing content adapted from https://www.amsdigital.in/blogs.php (English), suitable for rendering as cards/list items."
+        },
+        {
+          "path": "frontend/src/content/companyPages.ts",
+          "operation": "create",
+          "description": "Centralize English-adapted copy for About and AMS Digital Profile pages sourced from their respective AMS Digital URLs."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
           "operation": "modify",
-          "description": "Refine Legal section typography and layout to match Vercel-like documentation styling: improved type scale, spacing, divider treatment, and readable prose in light/dark, while keeping all legal content and #privacy/#terms/#cookies anchors intact. Uses shadcn-ui Separator; verify the component's usage instructions before implementing."
+          "description": "Render About page content from centralized companyPages data using consistent section layout and typography."
+        },
+        {
+          "path": "frontend/src/pages/BlogsPage.tsx",
+          "operation": "modify",
+          "description": "Render Blogs page content from centralized blogPosts data using a readable, premium list/grid (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/CustomerReviewsPage.tsx",
+          "operation": "modify",
+          "description": "Render multiple testimonials from centralized reviews data, highlighting outcomes and credibility signals (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/AmsDigitalProfilePage.tsx",
+          "operation": "modify",
+          "description": "Render AMS Digital Profile page content from centralized companyPages data in English."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Implement a contact form UI (name/email/message/services interest) with client-side validation and a non-emailing submission confirmation state (Verify the component's usage instructions before implementing)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add dedicated /privacy-policy and /cookie-policy pages and wire footer links to route to them.",
+      "acceptanceCriteria": [
+        "/privacy-policy renders privacy policy content in a readable legal layout",
+        "/cookie-policy renders cookie policy content in a readable legal layout",
+        "Footer legal links navigate to these routes (not #privacy/#cookies anchors)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/legalPolicies.ts",
+          "operation": "create",
+          "description": "Centralize privacy and cookie policy content (English) adapted from the referenced AMS Digital URLs for rendering in dedicated pages."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "operation": "modify",
+          "description": "Render privacy policy content from legalPolicies data in a readable legal layout (typography, headings, lists)."
+        },
+        {
+          "path": "frontend/src/pages/CookiePolicyPage.tsx",
+          "operation": "modify",
+          "description": "Render cookie policy content from legalPolicies data in a readable legal layout (typography, headings, lists)."
         },
         {
           "path": "frontend/src/components/marketing/SiteFooter.tsx",
           "operation": "modify",
-          "description": "Restyle footer to a Vercel-like footer system: neutral background, thin top divider, subdued link styling with crisp hover/focus, and remove gradient-forward brand mark styling while keeping existing links (#services/#process/#testimonials/#about/#contact/#privacy/#terms/#cookies) and footer text. Verify the component's usage instructions before implementing."
+          "description": "Update Legal links so they navigate to /privacy-policy and /cookie-policy routes (and remove reliance on #privacy/#cookies anchors) (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/LegalSections.tsx",
+          "operation": "delete",
+          "description": "Remove the in-homepage legal anchor section to avoid conflicting with dedicated legal routes and footer route links."
         }
       ]
     },
     {
       "id": "REQ-7",
-      "summary": "Implement Vercel-like component-level styling via design tokens, utilities, and section compositions for a clean high-contrast grid/divider-forward aesthetic in light and dark modes without editing immutable UI component sources.",
+      "summary": "Update global header and footer navigation to support the multi-page structure with consistent desktop and mobile menus.",
       "acceptanceCriteria": [
-        "Global theme variables and base styles (e.g., in frontend/src/index.css) are updated to a Vercel-like neutral palette with clear semantic contrast for text, borders, and surfaces.",
-        "Header, buttons, badges, cards, and section wrappers exhibit consistent Vercel-like styling: minimal rounding, subtle shadows (or none), thin borders, and refined hover/focus states.",
-        "The Hero section’s visual treatment is updated away from colorful gradients toward a Vercel-like restrained treatment (e.g., subtle grid/background texture and clean panels) while keeping existing content and CTAs.",
-        "No edits are made to any immutable UI component source files under frontend/src/components/ui or other listed immutablePaths; changes are achieved via composition and styling in editable files."
+        "Header nav links route to the correct pages (and do not rely on single-page section scrolling for primary navigation)",
+        "Mobile menu includes the same primary destinations as desktop",
+        "Footer link groups include working links for Services, Company, and Legal pages"
       ],
       "file_operations": [
         {
-          "path": "frontend/tailwind.config.js",
+          "path": "frontend/src/components/marketing/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Adjust Tailwind theme extensions to support Vercel-like styling primitives (e.g., subtler shadow scale, tighter radius via --radius, and reusable neutral grid/texture background utilities) while continuing to map colors to CSS variables for light/dark. Do not modify any immutable UI component source. Verify the component's usage instructions before implementing."
+          "description": "Replace section-scroll navigation with route navigation links to Home, About, Services, Portfolio, Blogs, Customer Reviews, and Contact; ensure mobile Sheet menu matches desktop items (Verify the component's usage instructions before implementing)."
         },
+        {
+          "path": "frontend/src/components/marketing/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Update footer link groups so Services and Company links route to the correct pages (e.g., /services, /about, /portfolio, /contact) and Legal links route to dedicated legal pages (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the routed layout consistently wraps all pages with SiteHeader/SiteFooter so navigation remains consistent site-wide."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Centralize case studies, services, blog posts, and reviews into typed TypeScript data modules and render pages from those modules.",
+      "acceptanceCriteria": [
+        "Portfolio, Services, Blogs, and Reviews pages are driven primarily by shared data structures",
+        "Content is easy to update without editing multiple components",
+        "TypeScript types exist for core content entities (case study, service, blog post, review)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/types.ts",
+          "operation": "create",
+          "description": "Add TypeScript types for core content entities (CaseStudy, Service, BlogPost, Review) to standardize data modules and page rendering."
+        },
+        {
+          "path": "frontend/src/content/caseStudies.ts",
+          "operation": "modify",
+          "description": "Ensure caseStudies data is typed and structured for list + detail views, including visual asset references."
+        },
+        {
+          "path": "frontend/src/content/services.ts",
+          "operation": "modify",
+          "description": "Ensure services data is typed and includes all required detail sections for each service page."
+        },
+        {
+          "path": "frontend/src/content/blogPosts.ts",
+          "operation": "modify",
+          "description": "Ensure blog post data is typed and renderable without hard-coded blocks inside page components."
+        },
+        {
+          "path": "frontend/src/content/reviews.ts",
+          "operation": "modify",
+          "description": "Ensure reviews data is typed and supports multiple testimonials with outcome highlights."
+        },
+        {
+          "path": "frontend/src/pages/PortfolioPage.tsx",
+          "operation": "modify",
+          "description": "Refactor Portfolio page so it renders primarily from centralized typed data (avoid large hard-coded text blocks)."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Refactor Services landing page so it renders primarily from centralized typed services data (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/BlogsPage.tsx",
+          "operation": "modify",
+          "description": "Refactor Blogs page so it renders primarily from centralized typed blog data."
+        },
+        {
+          "path": "frontend/src/pages/CustomerReviewsPage.tsx",
+          "operation": "modify",
+          "description": "Refactor Reviews page so it renders primarily from centralized typed reviews data."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Apply a cohesive modern agency theme (non blue/purple-dominant) with consistent typography, spacing, and premium portfolio presentation across pages.",
+      "acceptanceCriteria": [
+        "All pages share a consistent design system (headings, body text, cards, buttons, sections)",
+        "The chosen palette is not primarily blue/purple",
+        "Portfolio/case study pages look visually premium and emphasize readability and outcomes"
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Update design tokens (CSS variables) and base typography to a Vercel-like neutral system, including: smaller radius, crisper border contrast, restrained accent, and refined focus-visible states. Replace gradient-forward helper utilities (e.g., gradient-text/hover-lift) with Vercel-like equivalents (subtle hover, minimal elevation) while keeping usage limited to editable marketing components. Verify the component's usage instructions before implementing."
+          "description": "Extend the existing global design tokens/utilities to support consistent multi-page layouts (page headers, breadcrumb/metadata patterns, premium case study typography) while keeping a non blue/purple-dominant palette."
         },
         {
-          "path": "frontend/src/components/marketing/sections/SectionShell.tsx",
-          "operation": "modify",
-          "description": "Evolve SectionShell into a consistent section composition primitive (shell + container + divider rules) that marketing sections can share to achieve grid-and-divider-forward aesthetics in both themes, without touching frontend/src/components/ui internals. Verify the component's usage instructions before implementing."
+          "path": "frontend/src/components/layout/PageShell.tsx",
+          "operation": "create",
+          "description": "Create a reusable page layout wrapper to standardize spacing, max-width, page titles, and section rhythm across all new routes (Verify the component's usage instructions before implementing)."
         },
         {
-          "path": "frontend/src/components/marketing/SiteHeader.tsx",
+          "path": "frontend/src/pages/PortfolioPage.tsx",
           "operation": "modify",
-          "description": "Ensure header interactive states (hover/focus/active) match updated global tokens and Vercel-like restraint, relying on shadcn-ui component props/classes (no edits under frontend/src/components/ui). Verify the component's usage instructions before implementing."
+          "description": "Apply a premium, readability-first case study listing layout with consistent card styling and clear outcome emphasis (Verify the component's usage instructions before implementing)."
         },
         {
-          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "path": "frontend/src/pages/CaseStudyDetailPage.tsx",
           "operation": "modify",
-          "description": "Apply the new section shell + token system to the Hero composition (background texture/panels, button/badge styling, spacing density) to meet Vercel-like standards while keeping content unchanged. Uses shadcn-ui Badge/Button; verify the component's usage instructions before implementing."
+          "description": "Apply premium case study detail styling (typography scale, sections, outcome callouts) consistent with the overall theme (Verify the component's usage instructions before implementing)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add required generated images as static assets and use them on Home and Portfolio (hero visual and case study thumbnails), plus service icon sprite usage.",
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated with the specified filenames",
+        "Home and Portfolio pages load these images directly from static assets (not via backend)",
+        "Case study listings display a consistent thumbnail treatment across breakpoints"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/ams-hero-visual.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated image asset file required for the Home page hero visual."
+        },
+        {
+          "path": "frontend/public/assets/generated/ams-case-thumb-set.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated image asset file required as the consistent case study thumbnail set source."
+        },
+        {
+          "path": "frontend/public/assets/generated/ams-services-icons-sprite.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated services outline icon sprite for consistent service iconography."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Wire frontend/public/assets/generated/ams-hero-visual.dim_1600x900.png into the Home hero area and ensure it supports responsive layouts (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/pages/PortfolioPage.tsx",
+          "operation": "modify",
+          "description": "Render case study thumbnails using frontend/public/assets/generated/ams-case-thumb-set.dim_1200x800.png with a consistent treatment across breakpoints (Verify the component's usage instructions before implementing)."
+        },
+        {
+          "path": "frontend/src/components/services/ServiceIcon.tsx",
+          "operation": "create",
+          "description": "Create a small icon renderer that references frontend/public/assets/generated/ams-services-icons-sprite.dim_1024x1024.png for consistent service icons across Services pages (Verify the component's usage instructions before implementing)."
         }
       ]
     }

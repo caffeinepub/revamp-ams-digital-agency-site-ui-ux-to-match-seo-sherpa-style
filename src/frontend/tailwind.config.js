@@ -10,10 +10,10 @@ export default {
         container: {
             center: true,
             padding: {
-                DEFAULT: '1rem',
+                DEFAULT: '1.5rem',
                 sm: '2rem',
-                lg: '4rem',
-                xl: '5rem',
+                lg: '3rem',
+                xl: '4rem',
                 '2xl': '6rem',
             },
             screens: {
@@ -81,12 +81,12 @@ export default {
                 sm: 'calc(var(--radius) - 4px)'
             },
             boxShadow: {
-                xs: '0 1px 2px 0 rgba(0,0,0,0.03)',
-                sm: '0 1px 2px 0 rgba(0,0,0,0.05)',
-                DEFAULT: '0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1)',
-                md: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)',
-                lg: '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)',
-                xl: '0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)',
+                xs: '0 1px 2px 0 rgba(0,0,0,0.04)',
+                sm: '0 2px 4px 0 rgba(0,0,0,0.06)',
+                DEFAULT: '0 4px 8px 0 rgba(0,0,0,0.08)',
+                md: '0 6px 12px -2px rgba(0,0,0,0.08)',
+                lg: '0 12px 24px -4px rgba(0,0,0,0.1)',
+                xl: '0 20px 40px -8px rgba(0,0,0,0.12)',
             },
             keyframes: {
                 'accordion-down': {
@@ -102,12 +102,9 @@ export default {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out'
             },
-            backgroundImage: {
-                'grid-pattern': 'linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)',
-                'grid-pattern-dark': 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            },
-            backgroundSize: {
-                'grid': '48px 48px',
+            spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
             }
         }
     },

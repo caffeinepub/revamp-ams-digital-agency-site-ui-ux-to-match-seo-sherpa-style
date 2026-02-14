@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Link, useNavigate } from '@tanstack/react-router';
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,50 +18,43 @@ export function SiteHeader() {
   }, []);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'About', href: '#about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'About', href: '/about' },
+    { label: 'Blogs', href: '/blogs' },
+    { label: 'Reviews', href: '/customer-reviews' },
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
-  };
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b'
-          : 'bg-transparent'
+          ? 'bg-background/95 backdrop-blur-md border-b shadow-sm'
+          : 'bg-background/80 backdrop-blur-sm'
       }`}
     >
       <div className="container-wide">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <button onClick={() => scrollToSection('#')} className="flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-7 h-7 rounded bg-foreground">
-              <span className="text-background font-bold text-sm">A</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-foreground transition-transform group-hover:scale-105">
+              <span className="text-background font-bold text-lg">A</span>
             </div>
-            <span className="font-semibold text-base tracking-tight">
+            <span className="font-bold text-xl tracking-tight">
               AMS Digital
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+                to={item.href}
+                className="px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -67,13 +62,13 @@ export function SiteHeader() {
           <div className="flex items-center space-x-3">
             <Button
               variant="ghost"
-              size="sm"
-              className="hidden sm:inline-flex"
-              onClick={() => scrollToSection('#contact')}
+              size="default"
+              className="hidden sm:inline-flex font-medium"
+              onClick={() => navigate({ to: '/contact' })}
             >
               Contact
             </Button>
-            <Button size="sm" onClick={() => scrollToSection('#contact')}>
+            <Button size="default" className="font-medium" onClick={() => navigate({ to: '/contact' })}>
               Get Started
             </Button>
 
@@ -81,25 +76,30 @@ export function SiteHeader() {
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col space-y-1 mt-8">
+                <nav className="flex flex-col space-y-2 mt-8">
                   {navItems.map((item) => (
-                    <button
+                    <Link
                       key={item.label}
-                      onClick={() => scrollToSection(item.href)}
-                      className="text-left px-3 py-2 text-base text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                      to={item.href}
+                      className="text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
-                    </button>
+                    </Link>
                   ))}
-                  <div className="pt-4">
+                  <div className="pt-6">
                     <Button
-                      className="w-full"
-                      onClick={() => scrollToSection('#contact')}
+                      className="w-full font-medium"
+                      size="lg"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        navigate({ to: '/contact' });
+                      }}
                     >
                       Get Started
                     </Button>

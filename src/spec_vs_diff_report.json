@@ -1,41 +1,73 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-12T14:36:59.197Z",
-  "summary": "Diff largely implements a Vercel-inspired UI refresh via updated global tokens (index.css), refined Tailwind theme, and consistent section shells/cards/header/footer styling while preserving single-page section composition and smooth scrolling behavior. One potentially unrelated addition is a new CTA email capture form handler and an added placeholder hook file summary not requested in the BuildRequest.",
-  "missing_requirements": [],
-  "hallucinated_features": [
+  "generatedAt": "2026-02-13T14:36:03.850Z",
+  "summary": "Diff implements TanStack Router-based multi-page structure with consistent header/footer, creates several required pages (Home, About, Portfolio + case study detail, Blogs, Contact, Reviews, Privacy, Cookie, Profile) and centralizes much content into TS data modules. However, service landing/detail page requirements and generated static assets usage cannot be fully verified from the provided diff summary, and required service-icon sprite usage is not evidenced. Header nav also lacks explicit Home link and may lack Contact in the primary nav items.",
+  "missing_requirements": [
     {
-      "description": "CTA section implements an email submission form with React state and a submit handler that logs the email (email capture behavior), which could be considered an added product feature beyond visual/UX restyling.",
-      "reason": "BuildRequest explicitly constrains the work to a visual/UX restyle and says not to introduce unrelated product features; adding form submission behavior is not described in REQ-6/REQ-7.",
+      "id": "REQ-4",
+      "requirement": "Create a Services landing page (/services) and individual service detail pages for all provided service URLs; each service detail page must include: service overview, key deliverables, process/approach, typical outcomes, and a CTA to Contact.",
+      "reason": "Routes for /services and /services/$slug are registered, but the diff summary does not include the implementations of ServicesPage.tsx or ServiceDetailPage.tsx, so the required content sections and Contact CTA per service cannot be verified.",
       "evidence": [
-        "frontend/src/components/marketing/sections/CtaSection.tsx"
+        "frontend/src/App.tsx (imports ServicesPage/ServiceDetailPage and registers /services and /services/$slug routes)"
       ]
     },
     {
-      "description": "Introduced/mentioned an empty placeholder hook file for future React Query usage.",
-      "reason": "Not requested by REQ-6/REQ-7; it relates to future backend functionality rather than UI restyling.",
+      "id": "REQ-7",
+      "requirement": "Update the global header navigation to include links to Home, About, Services, Portfolio, Blogs, Customer Reviews, and Contact; ensure mobile navigation supports the same destinations.",
+      "reason": "The header navItems shown include Services, Portfolio, About, Blogs, Reviews, but do not include an explicit Home link and do not include Contact in the navItems list. The mobile menu is driven by the same navItems array.",
       "evidence": [
-        "frontend-file-summaries.txt (entry for frontend/src/hooks/useQueries.ts)"
+        "frontend/src/components/marketing/SiteHeader.tsx (navItems array)"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Add and render the required generated images as static assets under frontend/public/assets/generated (hero, case thumbnails, services icons sprite) and use them on the Home and Portfolio pages.",
+      "reason": "Home and case studies reference the hero and thumbnail PNG paths, but the diff summary does not show the actual static asset files under frontend/public/assets/generated, nor any usage of the required services icon sprite asset. Added files list is truncated/omitted for 2 files, so asset presence cannot be confirmed from the provided evidence.",
+      "evidence": [
+        "frontend/src/pages/HomePage.tsx (references /assets/generated/ams-hero-visual.dim_1600x900.png)",
+        "frontend/src/content/caseStudies.ts (references /assets/generated/ams-case-thumb-set.dim_1200x800.png)"
       ]
     }
   ],
-  "confidence": 0.62,
+  "hallucinated_features": [
+    {
+      "description": "Footer includes appIdentifier/UTM tracking behavior and references 'Caffeine.ai attribution' (per file summary), which were not requested requirements.",
+      "reason": "BuildRequest does not request analytics/UTM tracking or third-party attribution in the footer; diff summary indicates these additions.",
+      "evidence": [
+        "frontend/src/components/marketing/SiteFooter.tsx (appIdentifier calculation)",
+        "frontend-file-summaries.txt (SiteFooter description mentions 'Caffeine.ai attribution with dynamic year and UTM tracking')"
+      ]
+    }
+  ],
+  "confidence": 0.68,
   "changed_files": [
     "frontend-file-summaries.txt",
+    "frontend/src/App.tsx",
+    "frontend/src/components/layout/PageShell.tsx",
     "frontend/src/components/marketing/SiteFooter.tsx",
     "frontend/src/components/marketing/SiteHeader.tsx",
-    "frontend/src/components/marketing/sections/AboutSection.tsx",
-    "frontend/src/components/marketing/sections/CtaSection.tsx",
-    "frontend/src/components/marketing/sections/HeroSection.tsx",
-    "frontend/src/components/marketing/sections/LegalSections.tsx",
-    "frontend/src/components/marketing/sections/ProcessSection.tsx",
-    "frontend/src/components/marketing/sections/ProofSection.tsx",
-    "frontend/src/components/marketing/sections/SectionShell.tsx",
-    "frontend/src/components/marketing/sections/ServicesSection.tsx",
-    "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
-    "frontend/src/index.css",
-    "frontend/tailwind.config.js",
+    "frontend/src/components/portfolio/CaseStudyCard.tsx",
+    "frontend/src/content/blogPosts.ts",
+    "frontend/src/content/caseStudies.ts",
+    "frontend/src/content/companyPages.ts",
+    "frontend/src/content/legalPolicies.ts",
+    "frontend/src/content/reviews.ts",
+    "frontend/src/content/services.ts",
+    "frontend/src/content/siteCopy.ts",
+    "frontend/src/content/types.ts",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/AmsDigitalProfilePage.tsx",
+    "frontend/src/pages/BlogsPage.tsx",
+    "frontend/src/pages/CaseStudyDetailPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/CookiePolicyPage.tsx",
+    "frontend/src/pages/CustomerReviewsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PortfolioPage.tsx",
+    "frontend/src/pages/PrivacyPolicyPage.tsx",
+    "frontend/src/pages/ServiceDetailPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
     "project_state.json"
   ]
 }
